@@ -1,4 +1,34 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TimeLine from "@/components/timeLine.vue";
+
+type element = {
+  title: string;
+  description: string;
+  date: string;
+  icon: string;
+};
+
+const elements = [
+  {
+    title: "Bachelor",
+    description: "I have a <span red>bachelor</span>",
+    date: "test1",
+    icon: "school",
+  },
+  {
+    title: "Developer",
+    description: "Developer at <span green>Cyber Imagination</span>",
+    date: "test2",
+    icon: "work",
+  },
+  {
+    title: "High School",
+    description: "I have a <span purple>High School Degree</span>",
+    date: "test1",
+    icon: "labs",
+  },
+] as element[];
+</script>
 
 <template>
   <div id="container">
@@ -17,6 +47,8 @@
         <img src="@/assets/blob.svg" alt="Backgrounds Image 2" blob2 />
       </div>
     </div>
+
+    <TimeLine :p-elements="elements" />
   </div>
 </template>
 
@@ -63,6 +95,7 @@ div#header {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  margin: 0 0 100px 0;
 }
 
 div#buttons {
@@ -142,6 +175,7 @@ div#HeaderImage {
   div#header {
     flex-direction: column;
     align-items: center;
+    margin-bottom: 300px;
   }
 
   div#HeaderImage {
