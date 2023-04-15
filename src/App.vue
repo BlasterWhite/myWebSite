@@ -20,11 +20,12 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 div#container {
   justify-content: center;
   height: 100vh;
   width: 90%;
+  max-width: 98vw;
   /* background-color: #ff0e0e69; */
   margin: 206px auto 0 auto;
 }
@@ -59,6 +60,7 @@ h1#name {
 
 div#header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
 }
@@ -68,10 +70,10 @@ div#buttons {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-}
 
-div#buttons * {
-  margin: 12px 64px;
+  * {
+    margin: 12px 64px;
+  }
 }
 
 button {
@@ -88,17 +90,17 @@ button {
   margin: 10px;
   cursor: pointer;
   transition: 0.3s;
-}
 
-button:hover {
-  transform: scale(1.1);
-}
+  &:hover {
+    transform: scale(1.1);
+  }
 
-button#portfolio {
-  padding: calc(16px - 3px) calc(24px - 3px);
-  background: none;
-  border: 3px solid var(--color-red);
-  color: var(--color-red);
+  &#portfolio {
+    padding: calc(16px - 3px) calc(24px - 3px);
+    background: none;
+    border: 3px solid var(--color-red);
+    color: var(--color-red);
+  }
 }
 
 div#HeaderImage {
@@ -109,29 +111,53 @@ div#HeaderImage {
   margin: 0 164px;
   position: relative;
   top: -100px;
+
+  img {
+    width: 100%;
+  }
+
+  img#pp {
+    z-index: 1;
+    width: 150%;
+  }
+
+  img[blob2] {
+    filter: invert(66%) sepia(88%) saturate(602%) hue-rotate(358deg)
+      brightness(102%) contrast(104%);
+    transform: rotate(-69.5deg);
+    position: absolute;
+    top: -24%;
+    left: -80%;
+    width: 300%;
+    z-index: -2;
+    animation: infinite 15s floating;
+  }
 }
 
-div#HeaderImage img {
-  width: 100%;
+/**********************
+* Responsive
+**********************/
+/* Set backgrounds of the body to red when screen is smaller than 1300px */
+@media screen and (max-width: 1300px) {
+  div#header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  div#HeaderImage {
+    margin: 0;
+    top: 30px;
+    left: -90px;
+  }
+
+  div#container {
+    margin: 0;
+  }
 }
 
-div#HeaderImage img#pp {
-  z-index: 1;
-  width: 150%;
-}
-
-div#HeaderImage img[blob2] {
-  filter: invert(66%) sepia(88%) saturate(602%) hue-rotate(358deg)
-    brightness(102%) contrast(104%);
-  transform: rotate(-69.5deg);
-  position: absolute;
-  top: -24%;
-  left: -80%;
-  width: 300%;
-  z-index: -2;
-  animation: infinite 15s floating;
-}
-
+/**********************
+* Animations
+**********************/
 @keyframes floating {
   0% {
     transform: rotate(-69.5deg) translate(0, 0px);
