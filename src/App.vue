@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TimeLine from "@/components/timeLine.vue";
+import MySkills from "@/components/mySkills.vue";
 
 type element = {
   title: string;
@@ -48,7 +49,9 @@ const elements = [
       </div>
     </div>
 
-    <TimeLine :p-elements="elements" />
+    <time-line :p-elements="elements" />
+
+    <my-skills />
   </div>
 </template>
 
