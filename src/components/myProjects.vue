@@ -1,15 +1,36 @@
 <script lang="ts">
 import { defineComponent } from "vue";
+import ListProjects from "@/components/listProjects.vue";
 
 export default defineComponent({
   name: "MyProjects",
+  data() {
+    return {
+      isLoading: true,
+      projects: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+    };
+  },
+
+  methods: {
+    selectProject(i: number) {
+      console.log("Project " + i + " selected");
+    },
+  },
+
+  components: {
+    ListProjects,
+  },
 });
 </script>
 
 <template>
   <div class="my-projects">
     <h1>My Projects</h1>
-    <div class="project-list"></div>
+    <ListProjects
+      :isLoading="isLoading"
+      :projects="projects"
+      @select="selectProject"
+    />
   </div>
 </template>
 
