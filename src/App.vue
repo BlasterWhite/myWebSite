@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import TimeLine from "@/components/timeLine.vue";
 import MySkills from "@/components/mySkills.vue";
+import MyProjects from "@/components/myProjects.vue";
+import TopButton from "@/components/topButton.vue";
 
 type element = {
   title: string;
@@ -49,9 +51,13 @@ const elements = [
       </div>
     </div>
 
+    <top-button />
+
     <time-line :p-elements="elements" />
 
     <my-skills />
+
+    <my-projects />
   </div>
 </template>
 
