@@ -3,6 +3,7 @@ import TimeLine from "@/components/timeLine.vue";
 import MySkills from "@/components/mySkills.vue";
 import MyProjects from "@/components/myProjects.vue";
 import TopButton from "@/components/topButton.vue";
+import MyFooter from "@/components/myFooter.vue";
 
 type element = {
   title: string;
@@ -58,6 +59,8 @@ const elements = [
     <my-skills />
 
     <my-projects />
+
+    <my-footer />
   </div>
 </template>
 
