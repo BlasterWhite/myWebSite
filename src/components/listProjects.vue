@@ -12,6 +12,10 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
+    projectSelected: {
+      type: Number,
+      default: 1,
+    },
   },
   data() {
     return {
@@ -68,7 +72,13 @@ export default defineComponent({
 <template>
   <div class="list">
     <div class="list-projects loading" v-if="isLoading" ref="componentRef">
-      <div v-for="i in 10" :key="i" @click="select(i)" :id="'listProject' + i">
+      <div
+        v-for="i in 10"
+        :key="i"
+        @click="select(i)"
+        :id="'listProject' + i"
+        :class="projectSelected === i ? 'selected' : ''"
+      >
         {{ i }}
       </div>
     </div>

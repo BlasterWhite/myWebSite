@@ -1,6 +1,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import ListProjects from "@/components/listProjects.vue";
+import ShowProject from "@/components/showProject.vue";
 
 export default defineComponent({
   name: "MyProjects",
@@ -8,17 +9,20 @@ export default defineComponent({
     return {
       isLoading: true,
       projects: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+      projectSelected: 0,
     };
   },
 
   methods: {
     selectProject(i: number) {
       console.log("Project " + i + " selected");
+      this.projectSelected = i;
     },
   },
 
   components: {
     ListProjects,
+    ShowProject,
   },
 });
 </script>
@@ -30,6 +34,11 @@ export default defineComponent({
       :isLoading="isLoading"
       :projects="projects"
       @select="selectProject"
+    />
+    <show-project
+      :isLoading="isLoading"
+      :projects="projects"
+      :projectSelected="projectSelected"
     />
   </div>
 </template>

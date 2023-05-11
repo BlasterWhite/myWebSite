@@ -94,7 +94,7 @@ h1 {
     justify-content: flex-start;
     align-items: flex-start;
     width: 30%;
-    height: 100%;
+    min-height: 300px;
     margin: 0;
     padding: 0;
     border-radius: 8px;
