@@ -3,12 +3,22 @@ import { defineComponent } from "vue";
 import ListProjects from "@/components/listProjects.vue";
 import ShowProject from "@/components/showProject.vue";
 
+import projectsData from "@/assets/projects.json";
+
+interface Product {
+  title: string;
+  date: string;
+  thumbnail: string;
+  data: string;
+  active: boolean;
+}
+
 export default defineComponent({
   name: "MyProjects",
   data() {
     return {
-      isLoading: true,
-      projects: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+      isLoading: false,
+      projects: projectsData as Product[],
       projectSelected: 0,
     };
   },
@@ -24,12 +34,25 @@ export default defineComponent({
     ListProjects,
     ShowProject,
   },
+
+  mounted() {
+    console.log("MyProjects mounted");
+    this.projects = [];
+    projectsData.forEach((project) => {
+      if (project.active) this.projects.push(project);
+    });
+  },
 });
 </script>
 
 <template>
   <div class="my-projects">
-    <h1>My Projects</h1>
+    <h1>
+      My Projects<span
+        class="sub"
+        v-html="'(' + projects.length + ' projects)'"
+      ></span>
+    </h1>
     <ListProjects
       :isLoading="isLoading"
       :projects="projects"
@@ -71,6 +94,13 @@ h1 {
     background-color: v.$color-blue;
     margin: 0;
     padding: 0;
+  }
+
+  span.sub {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 8px;
+    color: rgba(0, 0, 0, 0.322);
   }
 }
 </style>

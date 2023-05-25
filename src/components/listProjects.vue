@@ -1,11 +1,18 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
+interface Product {
+  title: string;
+  date: string;
+  thumbnail: string;
+  data: string;
+}
+
 export default defineComponent({
   name: "ListProjects",
   props: {
     projects: {
-      type: Array,
+      type: Array as () => Product[],
       default: [],
     },
     isLoading: {
@@ -14,7 +21,7 @@ export default defineComponent({
     },
     projectSelected: {
       type: Number,
-      default: 1,
+      default: 0,
     },
   },
   data() {
@@ -48,6 +55,7 @@ export default defineComponent({
 
     getComponentWidth() {
       const element = this.$refs.componentRef as HTMLElement;
+      if (!element) return;
       this.componentWidth = element.offsetWidth ? element.offsetWidth : 0;
     },
 
@@ -121,7 +129,42 @@ export default defineComponent({
         {{ i }}
       </div>
     </div>
-    <div class="list-projects" v-else></div>
+    <div class="list-projects" v-else>
+      <div
+        v-for="(project, index) in projects"
+        :key="index"
+        @click="select(index)"
+        :id="'listProject' + index"
+        :class="projectSelected === index ? 'selected' : ''"
+        :style="`background: url(${project.thumbnail}); background-size: cover; background-position: center; overflow: hidden;`"
+        @mousemove="dragging"
+        @mousedown="draggingStart"
+        @mouseup="draggingStop"
+        @mouseleave="draggingStop"
+        @touchmove="dragging"
+        @touchstart="draggingStart"
+        @touchend="draggingStop"
+      >
+        <p
+          style="
+            background-color: rgba(0, 0, 0, 0.479);
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding: 4px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+          "
+        >
+          {{ project.title }}
+        </p>
+      </div>
+    </div>
   </div>
   <div class="next btn" @click="slide(-500)">
     <span class="material-symbols-outlined"> arrow_forward_ios</span>
