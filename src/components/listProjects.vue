@@ -21,6 +21,9 @@ export default defineComponent({
     return {
       componentWidth: 0,
       slideValue: 0,
+      isDragging: false,
+      prevX: 0,
+      prevScrollLeft: 0,
     };
   },
 
@@ -34,7 +37,7 @@ export default defineComponent({
   methods: {
     select(i: number) {
       const element = document.getElementById("listProject" + i);
-      if (element) {
+      if (element && this.isDragging === false) {
         document
           .getElementsByClassName("selected")[0]
           ?.classList.remove("selected");
@@ -49,12 +52,37 @@ export default defineComponent({
     },
 
     slide(value: number) {
-      this.slideValue += value;
-      if (this.slideValue > 0) this.slideValue = 0;
-      if (this.slideValue < -400 * (this.projects.length - 1))
-        this.slideValue = -400 * (this.projects.length - 1);
-      const element = this.$refs.componentRef as HTMLElement;
-      element.style.transform = `translateX(${this.slideValue}px)`;
+      const list = document.getElementsByClassName("list")[0] as HTMLElement;
+      list.scrollLeft -= value;
+    },
+
+    dragging(e: MouseEvent | TouchEvent) {
+      if (!this.isDragging) return;
+      const list = document.getElementsByClassName("list")[0] as HTMLElement;
+      e.preventDefault();
+      let delta = 0;
+      if (e instanceof MouseEvent) {
+        delta = e.pageX - this.prevX;
+      } else {
+        delta = e.touches[0].pageX - this.prevX;
+      }
+
+      list.scrollLeft = this.prevScrollLeft - delta;
+    },
+
+    draggingStart(e: MouseEvent | TouchEvent) {
+      this.isDragging = true;
+      if (e instanceof MouseEvent) {
+        this.prevX = e.pageX;
+      } else {
+        this.prevX = e.touches[0].pageX;
+      }
+      this.prevScrollLeft =
+        document.getElementsByClassName("list")[0].scrollLeft;
+    },
+
+    draggingStop() {
+      this.isDragging = false;
     },
   },
 
@@ -71,7 +99,18 @@ export default defineComponent({
 
 <template>
   <div class="list">
-    <div class="list-projects loading" v-if="isLoading" ref="componentRef">
+    <div
+      class="list-projects loading"
+      v-if="isLoading"
+      ref="componentRef"
+      @mousemove="dragging"
+      @mousedown="draggingStart"
+      @mouseup="draggingStop"
+      @mouseleave="draggingStop"
+      @touchmove="dragging"
+      @touchstart="draggingStart"
+      @touchend="draggingStop"
+    >
       <div
         v-for="i in 10"
         :key="i"
@@ -83,12 +122,12 @@ export default defineComponent({
       </div>
     </div>
     <div class="list-projects" v-else></div>
-    <div class="next btn" @click="slide(-432)">
-      <span class="material-symbols-outlined"> arrow_forward_ios</span>
-    </div>
-    <div class="prev btn" @click="slide(432)">
-      <span class="material-symbols-outlined"> arrow_back_ios_new</span>
-    </div>
+  </div>
+  <div class="next btn" @click="slide(-500)">
+    <span class="material-symbols-outlined"> arrow_forward_ios</span>
+  </div>
+  <div class="prev btn" @click="slide(500)">
+    <span class="material-symbols-outlined"> arrow_back_ios_new</span>
   </div>
 </template>
 
@@ -99,6 +138,7 @@ $contaier-color: #f6f6f6;
 
 .list {
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 .list-projects {
   padding: 16px;
