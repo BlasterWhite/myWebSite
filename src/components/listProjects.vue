@@ -31,6 +31,7 @@ export default defineComponent({
       isDragging: false,
       prevX: 0,
       prevScrollLeft: 0,
+      actualProject: this.projectSelected,
     };
   },
 
@@ -50,6 +51,7 @@ export default defineComponent({
           ?.classList.remove("selected");
         element.classList.add("selected");
         this.$emit("select", i);
+        console.log("EMIT ", i);
       }
     },
 
@@ -59,9 +61,21 @@ export default defineComponent({
       this.componentWidth = element.offsetWidth ? element.offsetWidth : 0;
     },
 
-    slide(value: number) {
+    slide(value: number, next: boolean) {
       const list = document.getElementsByClassName("list")[0] as HTMLElement;
       list.scrollLeft -= value;
+
+      if (next) {
+        if (this.actualProject + 1 < this.projects.length) {
+          this.actualProject++;
+          this.select(this.actualProject);
+        }
+      } else {
+        if (this.actualProject - 1 >= 0) {
+          this.actualProject--;
+          this.select(this.actualProject);
+        }
+      }
     },
 
     dragging(e: MouseEvent | TouchEvent) {
@@ -106,6 +120,15 @@ export default defineComponent({
 </script>
 
 <template>
+  <div class="controller">
+    <div @click="slide(432, false)" class="btn">
+      <span class="material-symbols-outlined"> arrow_back_ios_new</span>Previous
+    </div>
+    <div @click="slide(-432, true)" class="btn">
+      Next
+      <span class="material-symbols-outlined"> arrow_forward_ios</span>
+    </div>
+  </div>
   <div class="list">
     <div
       class="list-projects loading"
@@ -166,18 +189,18 @@ export default defineComponent({
       </div>
     </div>
   </div>
-  <div class="next btn" @click="slide(-500)">
-    <span class="material-symbols-outlined"> arrow_forward_ios</span>
-  </div>
-  <div class="prev btn" @click="slide(500)">
-    <span class="material-symbols-outlined"> arrow_back_ios_new</span>
-  </div>
 </template>
 
 <style scoped lang="scss">
 @use "../assets/variables" as v;
 
 $contaier-color: #f6f6f6;
+
+.controller {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 .list {
   overflow: hidden;
@@ -242,35 +265,11 @@ h1 {
 }
 
 .btn {
-  position: absolute;
-  top: 50%;
   user-select: none;
-  transform: translateY(-50%);
-  background-color: #0002;
-  padding: 4px;
+  margin: 0 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-  height: 100%;
-
-  &.next {
-    right: 0px;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 1) 100%
-    );
-  }
-
-  &.prev {
-    left: 0px;
-    background: linear-gradient(
-      270deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 1) 100%
-    );
-  }
 }
 
 @keyframes loading {
