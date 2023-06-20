@@ -215,4 +215,39 @@ div#HeaderImage {
     transform: rotate(-69.5deg) translate(0, -0px);
   }
 }
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Apply animations to specific elements */
+#header h1:nth-child(1) {
+  animation: slideDown 1s ease-in-out forwards;
+}
+
+#name {
+  animation: slideRight 1s ease-in-out forwards;
+}
 </style>
