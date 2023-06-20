@@ -2,4 +2,4 @@
 
 - [ ] Add animations when loading the page
 - [ ] Add animations when scrolling
-- [ ] Add links
+- [x] Add links

@@ -52,6 +52,7 @@ export default defineComponent({
         element.classList.add("selected");
         this.$emit("select", i);
         console.log("EMIT ", i);
+        this.actualProject = i;
       }
     },
 
