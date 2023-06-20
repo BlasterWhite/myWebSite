@@ -19,13 +19,13 @@ export default defineComponent({
       <div class="links">
         <h3>Links</h3>
         <div class="links-content">
-          <a href="#"
+          <a href="https://github.com/BlasterWhite"
             ><img src="@/assets/icons8-github.svg" alt="" /> GitHub
           </a>
-          <a href="#"
+          <a href="https://www.linkedin.com/in/mateo-guezennec/"
             ><img src="@/assets/icons8-linkedin.svg" alt="" /> LinkedIn
           </a>
-          <a href="#"
+          <a href="https://stackoverflow.com/users/15594374/blasterwhite"
             ><img src="@/assets/icons8-stack-overflow.svg" alt="" /> Stack
             Overflow
           </a>
@@ -35,13 +35,13 @@ export default defineComponent({
         <h3>Contact</h3>
         <div class="contact-content">
           <p>
-            <a href="mailto:#"
+            <a href="mailto:mat.guezen@gmail.com"
               ><span class="material-symbols-outlined"> mail </span> Email
               mat.guezen@gmail.com
             </a>
           </p>
           <p>
-            <a href="tel:#"
+            <a href="tel:+33649224725"
               ><span class="material-symbols-outlined"> call </span> Phone +33 6
               49 22 47 25
             </a>
