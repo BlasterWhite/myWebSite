@@ -9,7 +9,9 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit"
   },
+  "type": "module",
   "dependencies": {
+    "vite-plugin-static-copy": "^0.17.0",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },

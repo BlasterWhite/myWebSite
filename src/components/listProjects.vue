@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-interface Product {
+interface Project {
   title: string;
   date: string;
   thumbnail: string;
@@ -12,7 +12,7 @@ export default defineComponent({
   name: "ListProjects",
   props: {
     projects: {
-      type: Array as () => Product[],
+      type: Array as () => Project[],
       default: [],
     },
     isLoading: {
