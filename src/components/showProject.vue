@@ -1,5 +1,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
+import MyTag from "@/components/myTag.vue";
+import { marked } from "marked";
 
 interface Product {
   title: string;
@@ -11,65 +13,66 @@ interface Product {
 
 const tags = [
   {
-    "key": "SKILL_TEAM_WORK",
-    "value": "<span class=\"ts\">Team Work</span>"
+    key: "SKILL_TEAM_WORK",
+    value: '<span class="ts">Team Work</span>',
   },
   {
-    "key": "SKILL_HTML",
-    "value": "<span class=\"html\">HTML</span>"
+    key: "SKILL_HTML",
+    value: '<span class="html">HTML</span>',
   },
   {
-    "key": "SKILL_JS",
-    "value": "<span class=\"js\">JavaScript</span>"
+    key: "SKILL_JS",
+    value: '<span class="js">JavaScript</span>',
   },
   {
-    "key": "SKILL_CSS",
-    "value": "<span class=\"css\">CSS</span>"
+    key: "SKILL_CSS",
+    value: '<span class="css">CSS</span>',
   },
   {
-    "key": "SKILL_VUEJS",
-    "value": "<span class=\"vue\">VueJS</span>"
+    key: "SKILL_VUEJS",
+    value: '<span class="vue">VueJS</span>',
   },
   {
-    "key": "SKILL_SASS",
-    "value": "<span class=\"css\">Sass</span>"
+    key: "SKILL_SASS",
+    value: '<span class="css">Sass</span>',
   },
   {
-    "key": "SKILL_SQL",
-    "value": "<span class=\"sql\">SQL</span>"
+    key: "SKILL_SQL",
+    value: '<span class="sql">SQL</span>',
   },
   {
-    "key": "SKILL_ARDUINO",
-    "value": "<span class=\"arduino\">Arduino</span>"
+    key: "SKILL_ARDUINO",
+    value: '<span class="arduino">Arduino</span>',
   },
   {
-    "key": "SKILL_PYTHON",
-    "value": "<span class=\"python\">Python</span>"
+    key: "SKILL_PYTHON",
+    value: '<span class="python">Python</span>',
   },
   {
-    "key": "SKILL_NODEJS",
-    "value": "<span class=\"nodejs\">NodeJS</span>"
+    key: "SKILL_NODEJS",
+    value: '<span class="nodejs">NodeJS</span>',
   },
   {
-    "key": "SKILL_TS",
-    "value": "<span class=\"ts\">TypeScript</span>"
+    key: "SKILL_TS",
+    value: '<span class="ts">TypeScript</span>',
   },
   {
-    "key": "SKILL_NETWORK",
-    "value": "<span class=\"network\">Network</span>"
+    key: "SKILL_NETWORK",
+    value: '<span class="network">Network</span>',
   },
   {
-    "key": "SKILL_C",
-    "value": "<span class=\"c\">C language</span>"
+    key: "SKILL_C",
+    value: '<span class="c">C language</span>',
   },
   {
-    "key": "SKILL_PHP",
-    "value": "<span class=\"php\">PHP</span>"
+    key: "SKILL_PHP",
+    value: '<span class="php">PHP</span>',
   },
-]
+];
 
 export default defineComponent({
   name: "ShowProject",
+  components: { MyTag },
   props: {
     projects: {
       type: Array as () => Product[],
@@ -95,14 +98,18 @@ export default defineComponent({
   },
   computed: {
     html() {
-      return this.setTags(this.projects[this.projectSelected].markdown ? marked.parse(this.projects[this.projectSelected].markdown) : "");
+      return this.setTags(
+        this.projects[this.projectSelected].markdown
+          ? marked.parse(this.projects[this.projectSelected].markdown)
+          : "",
+      );
     },
   },
 });
 </script>
 
 <template>
-<div
+  <div
     :class="'project-showcase ' + (isLoading ? 'loading' : '')"
     v-html="html"
   ></div>
@@ -131,16 +138,14 @@ $contaier-color: #f6f6f6;
     flex-direction: row;
     align-items: center;
 
-
     &::before {
-      content: '';
+      content: "";
       width: 8px;
       height: 1.5rem;
       margin: 0.5rem 0.5rem 0.5rem 0;
       background: #ec3b3b;
       border-radius: 5px;
     }
-
   }
 
   h2 {
@@ -151,7 +156,7 @@ $contaier-color: #f6f6f6;
     align-items: center;
 
     &::before {
-      content: '';
+      content: "";
       width: 8px;
       height: 0.7rem;
       margin: 0.25rem 0.5rem 0.25rem 0;
@@ -169,7 +174,7 @@ $contaier-color: #f6f6f6;
   }
 
   img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     border-radius: 5px;
   }
@@ -228,7 +233,8 @@ $contaier-color: #f6f6f6;
       background: rgb(0, 129, 132);
     }
 
-    &.python, &.network {
+    &.python,
+    &.network {
       background: rgb(0, 0, 255);
     }
 
@@ -240,7 +246,8 @@ $contaier-color: #f6f6f6;
       background: rgb(0, 122, 204);
     }
 
-    &.c, &.php {
+    &.c,
+    &.php {
       background: rgb(36, 110, 150);
     }
   }

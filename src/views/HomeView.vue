@@ -115,18 +115,17 @@ div#buttons {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+  gap: 128px;
 
   * {
-    margin: 12px 64px;
+    margin: 12px 0;
   }
 }
 a {
   button {
-    border: 4px solid #fff0;
     background: var(--gradient-red);
     border: none;
     min-width: fit-content;
-    font-size: 20px;
     padding: 16px 24px;
     border-radius: 999px;
     color: white;
@@ -169,7 +168,7 @@ div#HeaderImage {
 
   img[blob2] {
     filter: invert(66%) sepia(88%) saturate(602%) hue-rotate(358deg)
-    brightness(102%) contrast(104%);
+      brightness(102%) contrast(104%);
     transform: rotate(-69.5deg);
     position: absolute;
     top: -24%;

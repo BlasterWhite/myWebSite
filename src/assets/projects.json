@@ -14,7 +14,7 @@
     "tags": [""],
     "thumbnail": "screens/uoiUEVD.png",
     "data": "<h2>New Website</h2><p>My new website is finally up and running. I hope you like it!</p><img src=\"screens/uoiUEVD.png\" alt=\"\" />",
-    "markdown": "# New Website\n\n SKILL_VUEJS SKILL_SASS SKILL_JS SKILL_TS  \n\nMy new website is finally up and running. I hope you like it!\n\n![](screens/uoiUEVD.png)",
+    "markdown": "# New Website\n\n SKILL_VUEJS SKILL_SASS SKILL_JS SKILL_TS  \n\nMy new website is finally up and running. I hope you like it!\n\n### Site devised in 2 part : \n\n1. Main Page\n\n\t Description of me \n\n 2. Project / Portfolio\n\n\t List of my most completed projects \n\n![](screens/uoiUEVD.png)",
     "active": true
   },
   {
