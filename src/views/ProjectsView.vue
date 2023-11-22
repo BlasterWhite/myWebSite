@@ -186,4 +186,54 @@ function isProjectSearch(project: ProjectData, search: String): boolean {
     }
   }
 }
+
+@media screen and (max-width: 900px) {
+  .my-projects {
+    padding: 16px 0;
+    a {
+      font-size: 1rem;
+      margin: 0 8px;
+    }
+    h1 {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    #container {
+      margin: 8px;
+      gap: 24px;
+
+      #search {
+        width: 100%;
+
+        input[type="search"] {
+          width: 100%;
+          font-size: 1rem;
+        }
+
+        button {
+          display: none;
+        }
+      }
+
+      #projects {
+        margin: 0;
+        gap: 8px;
+      }
+
+      #noResult {
+        text-align: center;
+        h2 {
+          font-size: 1.5rem;
+        }
+        h4 {
+          font-size: 1rem;
+        }
+        button {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
 </style>
