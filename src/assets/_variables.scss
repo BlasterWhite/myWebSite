@@ -1,0 +1,33 @@
+$color-red: #FF4141;
+$color-green: #83FF37;
+$color-blue: #008BF0;
+$color-yellow: #FFAF1B;
+$color-purple: #CB38FF;
+$color-orange : #FBC100;
+
+$gradient-red: linear-gradient(45deg, var($color-red) 0%, #FF6B6B 100%);
+$gradient-green: linear-gradient(45deg, var($color-green) 0%, #B1FF7F 100%);
+$gradient-blue: linear-gradient(45deg, var($color-blue) 0%, #4CB8FF 100%);
+$gradient-yellow: linear-gradient(45deg, var($color-yellow) 0%, #FFD57F 100%);
+$gradient-purple: linear-gradient(45deg, var($color-purple) 0%, #E57BFF 100%);
+$gradient-orange: linear-gradient(45deg, var($color-orange) 0%, #FFD57F 100%);
+
+$gradient-red-value: 45deg, var($color-red) 0%, #FF6B6B 100%;
+$gradient-green-value: 45deg, var($color-green) 0%, #B1FF7F 100%;
+$gradient-blue-value: 45deg, var($color-blue) 0%, #4CB8FF 100%;
+$gradient-yellow-value: 45deg, var($color-yellow) 0%, #FFD57F 100%;
+$gradient-purple-value: 45deg, var($color-purple) 0%, #E57BFF 100%;
+$gradient-orange-value: 45deg, var($color-orange) 0%, #FFD57F 100%;
+
+$background-color: #fff;
+$background-content: #F6F6F6;
+
+$color-text: #000;
+
+
+/**
+* Footer
+*/
+
+$footer-background: #0b002b;
+$footer-text: #fff;

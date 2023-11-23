@@ -1,0 +1,57 @@
+<script setup lang="ts">
+import { computed } from "vue";
+
+const props = defineProps({
+  modelValue: {
+    type: Object,
+    required: true,
+  },
+});
+
+const isVisible = computed(() => props.modelValue?.inSearch);
+</script>
+
+<template>
+  <div
+    class="project-preview"
+    :style="'background-image: url(' + props.modelValue?.thumbnail + ');'"
+    v-if="isVisible"
+  >
+    <div class="title">
+      {{ props.modelValue?.title || "Project" }}
+    </div>
+  </div>
+</template>
+
+<style scoped lang="scss">
+.project-preview {
+  width: 400px;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+    }
+  }
+}
+</style>
