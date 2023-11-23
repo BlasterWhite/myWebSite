@@ -1,6 +1,5 @@
 <script lang="ts">
 import { defineComponent } from "vue";
-import MyTag from "@/components/myTag.vue";
 import { marked } from "marked";
 
 interface Product {
@@ -72,7 +71,6 @@ const tags = [
 
 export default defineComponent({
   name: "ShowProject",
-  components: { MyTag },
   props: {
     projects: {
       type: Array as () => Product[],
@@ -193,6 +191,13 @@ $contaier-color: #f6f6f6;
 
   p {
     margin-bottom: 16px;
+  }
+
+  hr {
+    margin: 16px 16px;
+    color: rgba(0, 0, 0, 0.2);
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
   }
 
   span {
