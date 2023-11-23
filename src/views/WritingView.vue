@@ -22,6 +22,9 @@ const projects = ref<Product[]>([
       '# My Project\n## Description\n\n1. My list\n2. Thing\n3. Others\n\n```js\nconsole.log("Thing");\n```\n\n---',
   },
 ]);
+
+projects.value[0] = data[0];
+
 const playground = ref(projects.value[0].markdown);
 const singleLineMarkdown = computed(() => {
   console.log(playground.value);
@@ -31,6 +34,12 @@ const singleLineMarkdown = computed(() => {
 watch(playground, (newValue) => {
   projects.value[0].markdown = newValue;
 });
+
+const projectSelected = ref(0);
+
+watch(projectSelected, (newValue) => {
+  playground.value = data[newValue].markdown;
+});
 </script>
 
 <template>
@@ -38,6 +47,18 @@ watch(playground, (newValue) => {
     <main>
       <div id="playground">
         <h1>Playground</h1>
+        <div>
+          <label for="projectSelected">Project template: </label>
+          <select name="projectSelected" v-model="projectSelected">
+            <option
+              v-for="(project, index) in data"
+              :key="index"
+              :value="index"
+            >
+              {{ project.title }}
+            </option>
+          </select>
+        </div>
         <p>Here is where you can write your code</p>
         <textarea v-model="playground"></textarea>
         <h3>Single line markdown</h3>
@@ -112,6 +133,21 @@ watch(playground, (newValue) => {
         font-size: 1.2rem;
         font-family: "JetBrains Mono", monospace;
         resize: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      select {
+        background-color: #2a2a2a;
+        color: #f9f9f9;
+        border: 1px solid #f9f9f9;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        font-family: "JetBrains Mono", monospace;
+        resize: none;
+        text-align: center;
 
         &:focus {
           outline: none;
