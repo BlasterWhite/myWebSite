@@ -2,7 +2,8 @@
 import data from "@/assets/projects.json";
 import ProjectsView from "@/views/ProjectsView.vue";
 import { computed, ref, watch } from "vue";
-import ShowProject from "@/components/showProject.vue"; // TODO: import a project from the file
+import ShowProject from "@/components/showProject.vue";
+import projectModal from "@/components/writing/projectModal.vue";
 import type { Project } from "@/types/project";
 
 const projects = ref<Project[]>([
@@ -35,6 +36,8 @@ const projectSelected = ref(0);
 watch(projectSelected, (newValue) => {
   playground.value = data[newValue].markdown;
 });
+
+const openModal = ref(false);
 </script>
 
 <template>
@@ -64,6 +67,7 @@ watch(projectSelected, (newValue) => {
         ></textarea>
       </div>
       <p>→</p>
+      <button @click="openModal = true">Save</button>
       <div id="preview">
         <h1>Preview</h1>
         <p>Here is where you can see your code</p>
@@ -76,6 +80,11 @@ watch(projectSelected, (newValue) => {
         </div>
       </div>
     </main>
+    <project-modal
+      v-if="openModal"
+      :markdown="singleLineMarkdown"
+      @close="openModal = false"
+    />
   </div>
 </template>
 
@@ -99,6 +108,27 @@ watch(projectSelected, (newValue) => {
       z-index: 999;
       font-size: 2rem;
       font-weight: bold;
+    }
+
+    button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 999;
+      background-color: #f9f9f9;
+      color: #2a2a2a;
+      border: none;
+      border-radius: 10px;
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      font-family: "JetBrains Mono", monospace;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #2a2a2a;
+        color: #f9f9f9;
+      }
     }
 
     #playground,
