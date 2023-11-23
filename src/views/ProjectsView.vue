@@ -2,16 +2,7 @@
 import ProjectPreview from "@/components/projects/projectPreview.vue";
 import data from "@/assets/projects.json";
 import { computed, ref, watch } from "vue";
-
-interface ProjectData {
-  title: String;
-  thumbnail: String;
-  tags: String[];
-  date: String;
-  data: String;
-  markdown: String;
-  active: boolean;
-}
+import type { Project } from "@/types/project";
 
 const projects = ref(
   data.map((project) => Object.assign({ inSearch: true }, project)),
@@ -27,7 +18,7 @@ watch(search, (value) => {
   );
 });
 
-function isProjectSearch(project: ProjectData, search: String): boolean {
+function isProjectSearch(project: Project, search: String): boolean {
   if (project.title.toLowerCase().includes(search.toLowerCase())) return true;
   return project.tags.some((tag: String) =>
     tag.toLowerCase().includes(search.toLowerCase()),

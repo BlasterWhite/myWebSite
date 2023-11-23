@@ -1,12 +1,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
-
-interface Project {
-  title: string;
-  date: string;
-  thumbnail: string;
-  data: string;
-}
+import type { Project } from "@/types/project";
 
 export default defineComponent({
   name: "ListProjects",

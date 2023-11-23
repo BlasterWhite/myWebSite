@@ -1,14 +1,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { marked } from "marked";
-
-interface Product {
-  title: string;
-  date: string;
-  thumbnail: string;
-  data: string;
-  markdown: string;
-}
+import type { Project } from "@/types/project";
 
 const tags = [
   {
@@ -73,7 +66,7 @@ export default defineComponent({
   name: "ShowProject",
   props: {
     projects: {
-      type: Array as () => Product[],
+      type: Array as () => Project[],
       default: [],
     },
     isLoading: {

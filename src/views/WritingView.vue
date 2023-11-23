@@ -3,23 +3,18 @@ import data from "@/assets/projects.json";
 import ProjectsView from "@/views/ProjectsView.vue";
 import { computed, ref, watch } from "vue";
 import ShowProject from "@/components/showProject.vue"; // TODO: import a project from the file
+import type { Project } from "@/types/project";
 
-interface Product {
-  title: string;
-  date: string;
-  thumbnail: string;
-  data: string;
-  markdown: string;
-}
-
-const projects = ref<Product[]>([
+const projects = ref<Project[]>([
   {
     title: "My Project",
+    tags: [],
     date: new Date().toLocaleDateString(),
     thumbnail: "",
     data: "",
     markdown:
       '# My Project\n## Description\n\n1. My list\n2. Thing\n3. Others\n\n```js\nconsole.log("Thing");\n```\n\n---',
+    active: true,
   },
 ]);
 

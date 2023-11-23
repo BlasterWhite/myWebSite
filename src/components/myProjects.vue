@@ -2,23 +2,16 @@
 import { defineComponent } from "vue";
 import ListProjects from "@/components/listProjects.vue";
 import ShowProject from "@/components/showProject.vue";
+import type { Project } from "@/types/project";
 
 import projectsData from "@/assets/projects.json";
-
-interface Product {
-  title: string;
-  date: string;
-  thumbnail: string;
-  data: string;
-  active: boolean;
-}
 
 export default defineComponent({
   name: "MyProjects",
   data() {
     return {
       isLoading: false,
-      projects: projectsData as Product[],
+      projects: projectsData as Project[],
       projectSelected: 0,
     };
   },
