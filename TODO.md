@@ -1,5 +1,8 @@
 # TODO
 
+## General
+- [ ] Show Project change props : [project] → project
+
 ### Home page
 - [ ] Add animations when loading the page
 - [ ] Add animations when scrolling

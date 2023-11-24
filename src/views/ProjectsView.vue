@@ -3,6 +3,7 @@ import ProjectPreview from "@/components/projects/projectPreview.vue";
 import data from "@/assets/projects.json";
 import { computed, ref, watch } from "vue";
 import type { Project } from "@/types/project";
+import ProjectFullscreen from "@/components/projects/projectFullscreen.vue";
 
 const projects = ref(
   data.map((project) => Object.assign({ inSearch: true }, project)),
@@ -24,6 +25,13 @@ function isProjectSearch(project: Project, search: String): boolean {
     tag.toLowerCase().includes(search.toLowerCase()),
   );
 }
+
+const fullscreen = ref(false);
+const projectFullscreen = ref<Project>(projects.value[0] ?? null);
+function openFullscreen(project: Project) {
+  projectFullscreen.value = project;
+  fullscreen.value = true;
+}
 </script>
 
 <template>
@@ -44,6 +52,7 @@ function isProjectSearch(project: Project, search: String): boolean {
           v-for="(project, index) in projects"
           :key="index"
           :model-value="project"
+          @click="openFullscreen(project)"
         />
       </div>
       <div v-if="noResults" id="noResult">
@@ -54,6 +63,11 @@ function isProjectSearch(project: Project, search: String): boolean {
         <button @click="search = ''">Reset Search</button>
       </div>
     </div>
+    <project-fullscreen
+      v-if="fullscreen"
+      @close="fullscreen = false"
+      :model-value="projectFullscreen"
+    />
   </div>
 </template>
 
