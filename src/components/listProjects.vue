@@ -221,6 +221,20 @@ $contaier-color: #f6f6f6;
   align-items: flex-start;
   transition: all 0.2s ease-in-out;
 
+  .tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: v.$color-blue;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 0 0 8px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    user-select: none;
+    z-index: 9;
+  }
+
   div {
     background-color: $contaier-color;
     height: 200px;
