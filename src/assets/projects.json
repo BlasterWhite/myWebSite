@@ -1,14 +1,16 @@
 [
   {
+    "id": "1",
     "title": "Project Evaluation",
     "date": "2023-06-15",
     "tags": ["team work", "vuejs", "javascript", "sass"],
     "thumbnail": "screens/evaluation.jpg",
     "data": "<h1>Project Evaluation</h1>\n<div class=\"categories\"><span class=\"team\">Collaborative work</span><span class=\"vuejs\">VueJs</span><span class=\"js\">JavaScript</span><span class=\"css\">Sass</span></div>\n<p>During my apprenticeship in the CYIM company I encounter many project with Project Evaluation is a part of. This project made me learn a lot about the project management and the importance of the evaluation of a project.</p><p>Project Evaluation is a web application that allows the user to evaluate a project. The user can create a project and add the different tasks that compose it. Then, he can evaluate the project by giving a score to each task. The application will then calculate the score of the project and display it to the user.</p><p>Project Evaluation is a web application that allows the user to evaluate a project. The user can create a project and add the different tasks that compose it. Then, he can evaluate the project by giving a score to each task. The application will then calculate the score of the project and display it to the user.</p><img src=\"screens/evaluation.png\" alt=\"\" />",
-    "markdown": "# Project Evaluation\n\nSKILL_TEAM_WORK SKILL_VUEJS SKILL_JS SKILL_SASS\n\n## Get feedback from an audience in live\n\nDuring my apprenticeship in the CYIM company I encounter many project with Project Evaluation is a part of. This project made me learn a lot about the project management and the importance of the evaluation of a project.\n\nProject Evaluation is a web application that allows the user to evaluate a project. The user can create a project and add the different tasks that compose it. Then, he can evaluate the project by giving a score to each task. The application will then calculate the score of the project and display it to the user.\n\nProject Evaluation is a web application that allows the user to evaluate a project. The user can create a project and add the different tasks that compose it. Then, he can evaluate the project by giving a score to each task. The application will then calculate the score of the project and display it to the user.\n\n![](screens/evaluation.jpg)",
+    "markdown": "# Project Evaluation\n\nSKILL_TEAM_WORK SKILL_VUEJS SKILL_JS SKILL_SASS\n\n## Get feedback from an audience in live\n\nDuring my apprenticeship in the CYIM company I encounter many project with Project Evaluation is a part of. This project made me learn a lot about the project management and the importance of the evaluation of a project.\n\nProject Evaluation is a web application that allows the user to evaluate a project. The user can create a project and add the different tasks that compose it. Then, he can evaluate the project by giving a score to each task. The application will then calculate the score of the project and display it to the user.\n\n![](screens/evaluation.jpg)",
     "active": true
   },
   {
+    "id": "2",
     "title": "New Website",
     "date": "2023-01-01",
     "tags": [""],
@@ -18,6 +20,7 @@
     "active": true
   },
   {
+    "id": "3",
     "title": "Knight's Tour Chess Algorithm",
     "date": "",
     "tags": ["python"],
@@ -27,6 +30,7 @@
     "active": true
   },
   {
+    "id": "4",
     "title": "Connected Chicken Coop",
     "date": "",
     "tags": ["html", "css", "js", "nodejs", "arduino", "reseau"],
@@ -36,6 +40,7 @@
     "active": true
   },
   {
+    "id": "5",
     "title": "Portfolio",
     "date": "",
     "tags": ["html", "css", "js", "php"],
@@ -45,6 +50,7 @@
     "active": true
   },
   {
+    "id": "6",
     "title": "Site Vieux Pistons Brestons",
     "date": "",
     "tags": ["html", "css", "js", "php", "sql"],
@@ -54,6 +60,7 @@
     "active": false
   },
   {
+    "id": "7",
     "title": "Site KohFrais",
     "date": "",
     "tags": ["html", "css", "js"],
@@ -63,12 +70,23 @@
     "active": true
   },
   {
+    "id": "8",
     "title": "Yams CLI",
     "date": "",
     "tags": ["c"],
     "thumbnail": "screens/yahtzeeCover.png",
     "data": "<h1>Yams CLI</h1>\n<div class=\"categories\"><span class=\"c\">C Language</span></div>\n<p>Creation of a Yams game in a terminal</p>\n<p>As part of a project for my first year of my Bachelor's degree in Computer Science, I developed a Yams/Yathzee game in the terminal.<br>\n    My Yams game was created in several steps:</p>\n<ul>\n    <li>Creation of initial visuals using ASCII art</li>\n    <li>Development of the program using PseudoCode</li>\n    <li>Programming in C</li>\n    <li>Testing phase</li>\n</ul>\n<p>Throughout this project, I followed the typical software development steps of modeling, programming, and testing.</p><img src=\"screens/yams1.png\" alt=\"Screenshot of the program\" title=\"Screenshot of the program\" />",
     "markdown": "# Yams CLI\n\n SKILL_C \n\n## Creation of a Yams game in a terminal\nAs part of a project for my first year of my Bachelor's degree in Computer Science, I developed a Yams/Yathzee game in the terminal.  \n\n### My Yams game was created in several steps:\n- Creation of initial visuals using ASCII art\n- Development of the program using PseudoCode\n- Programming in C\n- Testing phase\n\nThroughout this project, I followed the typical software development steps of modeling, programming, and testing.\n\n![](screens/yams1.png)",
+    "active": true
+  },
+  {
+    "id": "9",
+    "title": "Markdown to PDF Conversion Service",
+    "date": "",
+    "tags": ["docker", "php", "bash", "team work"],
+    "thumbnail": "",
+    "data": "",
+    "markdown": "# Markdown to PDF Conversion Service\n\n SKILL_DOCKER SKILL_BASH SKILL_PHP SKILL_TEAM_WORK\n\n## Overview\n As part of a project undertaken during my first year of studies in Computer Science, I successfully developed a robust Markdown to PDF converter. The project integrated various technologies to ensure efficiency and scalability.\n\n## Technologies Employed\n- ### Docker :\n   - Docker was strategically chosen for its seamless deployment and scalability features. This containerization solution provided an easy and efficient means to manage the application.\n- ### Bash :\n   - The project leveraged Bash scripting to continuously monitor for new markdown documents. Upon detecting a new document, the script seamlessly triggered a PHP script for conversion.\n\n- ### Php :\n   - Two distinct PHP scripts were employed for different functionalities. The first script efficiently converted markdown files to PDF, while the second script generated a corresponding billing document.\n\n[Source Code](https://github.com/BlasterWhite/MarkdownToPDF/tree/main)",
     "active": true
   }
 ]

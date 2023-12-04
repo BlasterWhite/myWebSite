@@ -11,9 +11,27 @@ export default defineComponent({
   data() {
     return {
       isLoading: false,
-      projects: projectsData as Project[],
+      projectsRaw: projectsData as Project[],
       projectSelected: 0,
+      starProject: ["2", "3", "1", "1", "1", "1"],
     };
+  },
+
+  computed: {
+    projects() {
+      let projects = [] as Project[];
+
+      // Filter projects by starProject
+      this.projectsRaw.forEach((project) => {
+        if (this.starProject.includes(project.id)) projects.push(project);
+      });
+
+      // Sort by StarProject
+      projects.sort((a, b) => {
+        return this.starProject.indexOf(a.id) - this.starProject.indexOf(b.id);
+      });
+      return projects;
+    },
   },
 
   methods: {

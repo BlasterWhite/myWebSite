@@ -1,9 +1,10 @@
 export interface Project {
-  title: String;
-  thumbnail: String;
-  tags: String[];
-  date: String;
-  data: String;
-  markdown: String;
+  id: string;
+  title: string;
+  thumbnail: string;
+  tags: string[];
+  date: string;
+  data: string;
+  markdown: string;
   active: boolean;
 }

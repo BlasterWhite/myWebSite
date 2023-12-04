@@ -7,6 +7,7 @@
 - [ ] Add animations when loading the page
 - [ ] Add animations when scrolling
 - [x] Add links
+- [ ] Add tag on preview list (6 skills of Bachelor)
 
 ### Project list page
 - [ ] Add animations when loading the page

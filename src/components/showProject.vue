@@ -60,6 +60,14 @@ const tags = [
     key: "SKILL_PHP",
     value: '<span class="php">PHP</span>',
   },
+  {
+    key: "SKILL_BASH",
+    value: '<span class="bash">Bash</span>',
+  },
+  {
+    key: "SKILL_DOCKER",
+    value: '<span class="docker">Docker</span>',
+  },
 ];
 
 export default defineComponent({
@@ -79,17 +87,21 @@ export default defineComponent({
     },
   },
   methods: {
-    setTags(text: string) {
+    postHtml(text: string) {
       let newText = text;
       tags.forEach((tag) => {
         newText = newText.replace(tag.key, tag.value);
       });
+      newText = newText.replace(
+        /<a href="([^"]+)">([^<]+)<\/a>/g,
+        '<a href="$1" target="_blank">$2</a>',
+      );
       return newText;
     },
   },
   computed: {
     html() {
-      return this.setTags(
+      return this.postHtml(
         this.projects[this.projectSelected].markdown
           ? marked.parse(this.projects[this.projectSelected].markdown)
           : "",
@@ -156,6 +168,16 @@ $contaier-color: #f6f6f6;
     }
   }
 
+  a {
+    color: #fff;
+    background: #3ba8ec;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 8px 0;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
   pre {
     background: #1e1e1e;
     color: #f9f9f9;
@@ -183,7 +205,7 @@ $contaier-color: #f6f6f6;
   }
 
   p {
-    margin-bottom: 16px;
+    margin: 16px;
   }
 
   hr {
@@ -227,7 +249,8 @@ $contaier-color: #f6f6f6;
       background: rgb(0, 128, 0);
     }
 
-    &.arduino {
+    &.arduino,
+    &.bash {
       background: rgb(0, 129, 132);
     }
 
@@ -240,7 +263,8 @@ $contaier-color: #f6f6f6;
       background: rgb(255, 0, 255);
     }
 
-    &.ts {
+    &.ts,
+    &.docker {
       background: rgb(0, 122, 204);
     }
 

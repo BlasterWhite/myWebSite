@@ -26,6 +26,14 @@ export default defineComponent({
       prevX: 0,
       prevScrollLeft: 0,
       actualProject: this.projectSelected,
+      competences_bachelor: [
+        "Réaliser un développement d'application",
+        "Optimiser des applications informatiques",
+        "Admininistrer des systèmes informatiques communicants complexes",
+        "Gérer des données de l'information",
+        "Conduite de projet",
+        "Travailler dans une équipe informatique",
+      ],
     };
   },
 
@@ -163,6 +171,9 @@ export default defineComponent({
         @touchstart="draggingStart"
         @touchend="draggingStop"
       >
+        <p class="tag" v-if="index < competences_bachelor.length">
+          {{ competences_bachelor[index] }}
+        </p>
         <p
           style="
             background-color: rgba(0, 0, 0, 0.479);
