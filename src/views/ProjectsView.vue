@@ -45,7 +45,6 @@ function openFullscreen(project: Project) {
           placeholder="team work, javascript, elasticseach, ..."
           v-model="search"
         />
-        <button>Search 🔍</button>
       </div>
       <div id="projects">
         <project-preview
