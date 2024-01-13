@@ -27,12 +27,12 @@ export default defineComponent({
       prevScrollLeft: 0,
       actualProject: this.projectSelected,
       competences_bachelor: [
-        "Réaliser un développement d'application",
-        "Optimiser des applications informatiques",
-        "Admininistrer des systèmes informatiques communicants complexes",
-        "Gérer des données de l'information",
-        "Conduite de projet",
-        "Travailler dans une équipe informatique",
+        "Application development",
+        "Optimizing IT applications",
+        "Administer complex communicating IT systems",
+        "Managing information data",
+        "Project management",
+        "Working in an IT team",
       ],
     };
   },
@@ -53,7 +53,6 @@ export default defineComponent({
           ?.classList.remove("selected");
         element.classList.add("selected");
         this.$emit("select", i);
-        console.log("EMIT ", i);
         this.actualProject = i;
       }
     },
@@ -108,15 +107,6 @@ export default defineComponent({
 
     draggingStop() {
       this.isDragging = false;
-    },
-  },
-
-  computed: {
-    isTooTight() {
-      console.log(this.componentWidth, " < ", 400 * this.projects.length);
-      console.log(this.projects.length);
-
-      return this.componentWidth < 400 * this.projects.length;
     },
   },
 });
@@ -174,22 +164,7 @@ export default defineComponent({
         <p class="tag" v-if="index < competences_bachelor.length">
           {{ competences_bachelor[index] }}
         </p>
-        <p
-          style="
-            background-color: rgba(0, 0, 0, 0.479);
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            padding: 4px;
-            color: white;
-            font-weight: 600;
-            font-size: 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            user-select: none;
-          "
-        >
+        <p class="title">
           {{ project.title }}
         </p>
       </div>
@@ -212,6 +187,7 @@ $contaier-color: #f6f6f6;
   overflow: hidden;
   scroll-behavior: smooth;
 }
+
 .list-projects {
   padding: 16px;
   display: flex;
@@ -221,25 +197,10 @@ $contaier-color: #f6f6f6;
   align-items: flex-start;
   transition: all 0.2s ease-in-out;
 
-  .tag {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: v.$color-blue;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 0 0 8px 0;
-    font-size: 1rem;
-    font-weight: 600;
-    user-select: none;
-    z-index: 9;
-  }
-
   div {
     background-color: $contaier-color;
     height: 200px;
     width: 400px;
-    margin-bottom: 16px;
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -249,8 +210,46 @@ $contaier-color: #f6f6f6;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 
+    .title,
+    .tag {
+      background-color: rgba(0, 0, 0, 0.479);
+      position: absolute;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      padding: 4px;
+      color: white;
+      font-weight: 600;
+      font-size: 1.5rem;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      transition: 0.3s;
+    }
+
+    .title {
+      opacity: 0;
+    }
+
+    .tag {
+      opacity: 1;
+    }
+
     &.selected {
       border: 4px solid v.$color-blue;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+
+      .tag {
+        opacity: 0;
+      }
+
+      .title {
+        opacity: 1;
+      }
     }
   }
 

@@ -23,7 +23,6 @@ projects.value[0] = data[0];
 
 const playground = ref(projects.value[0].markdown);
 const singleLineMarkdown = computed(() => {
-  console.log(playground.value);
   return playground.value.replace(/"/g, '\\"').replace(/\n/g, "\\n");
 });
 

@@ -22,21 +22,22 @@ export default defineComponent({
       let projects = [] as Project[];
 
       // Filter projects by starProject
-      this.projectsRaw.forEach((project) => {
-        if (this.starProject.includes(project.id)) projects.push(project);
+      this.starProject.forEach((id) => {
+        const project = this.projectsRaw.find((p) => p.id === id);
+        if (project) projects.push(project);
       });
 
       // Sort by StarProject
       projects.sort((a, b) => {
         return this.starProject.indexOf(a.id) - this.starProject.indexOf(b.id);
       });
+
       return projects;
     },
   },
 
   methods: {
     selectProject(i: number) {
-      console.log("Project " + i + " selected");
       this.projectSelected = i;
     },
   },
@@ -45,25 +46,13 @@ export default defineComponent({
     ListProjects,
     ShowProject,
   },
-
-  mounted() {
-    console.log("MyProjects mounted");
-    this.projects = [];
-    projectsData.forEach((project) => {
-      if (project.active) this.projects.push(project);
-    });
-  },
 });
 </script>
 
 <template>
   <div class="my-projects">
-    <h1>
-      My Projects<span
-        class="sub"
-        v-html="'(' + projects.length + ' projects)'"
-      ></span>
-    </h1>
+    <h1>My Key Projects</h1>
+    <p v-for="project in projects" :key="project.id"></p>
     <ListProjects
       :isLoading="isLoading"
       :projects="projects"
