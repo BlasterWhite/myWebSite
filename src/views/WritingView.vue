@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import data from "@/assets/projects.json";
-import ProjectsView from "@/views/ProjectsView.vue";
 import { computed, ref, watch } from "vue";
 import ShowProject from "@/components/showProject.vue";
 import projectModal from "@/components/writing/projectModal.vue";
@@ -10,6 +9,7 @@ const projects = ref<Project[]>([
   {
     title: "My Project",
     tags: [],
+    id: "-1",
     date: new Date().toLocaleDateString(),
     thumbnail: "",
     data: "",
