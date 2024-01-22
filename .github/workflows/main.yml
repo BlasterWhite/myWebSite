@@ -22,7 +22,7 @@ jobs:
 
     steps:
     - name: Transfer Docker Image to VPS
-      uses: appleboy/scp-action@v1.0.3
+      uses: appleboy/scp-action@v0.1.7
       with:
         host: ${{ secrets.VPS_HOST }}
         username: ${{ secrets.VPS_USERNAME }}
