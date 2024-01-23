@@ -43,7 +43,9 @@ const elements = [
         <h3>I'm a <span class="text-red">FullStack Developer</span></h3>
         <div id="buttons">
           <a><button id="hire">Hire Me</button></a>
-          <a href="/projects"><button id="portfolio">Portfolio</button></a>
+          <router-link to="/projects"
+            ><button id="portfolio">Portfolio</button></router-link
+          >
         </div>
       </div>
       <div id="HeaderImage">
