@@ -42,6 +42,7 @@ const isVisible = computed(() => props.modelValue?.inSearch);
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     transition: 0.3s ease-in-out;
