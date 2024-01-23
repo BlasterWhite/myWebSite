@@ -66,7 +66,7 @@
     "tags": ["html", "css", "js"],
     "thumbnail": "screens/ice-cream-1.jpg",
     "data": "<h1>KohFrais Website</h1>\n<div class=\"categories\"><span class=\"html\">HTML</span><span class=\"css\">CSS</span><span class=\"js\">JavaScript</span></div>\n<p>Creation of a showcase website as part of a study project</p>\n<p>As part of a project for my first year of my Bachelor's degree in Computer Science, I collaborated with a team to develop a showcase website for a fictional company called KohFrais.<br> Our work was divided into several steps:</p>\n<ul>\n<li>Creation of a graphic design</li>\n<li>Designing the logo and graphic assets</li>\n<li>Development of the website</li>\n<li>Deployment</li>\n<li>Presentation defense</li>\n</ul>\n<p>Throughout the project, we used Gitlab at our university to save our work step by step, which allowed me to learn the importance of tools like <strong>git</strong>.</p><img src=\"screens/kohFrait1.png\" alt=\"Screenshot of the website\" title=\"Screenshot of the website\" />",
-    "markdown" : "# KohFrais Website\n\n SKILL_HTML SKILL_CSS SKILL_JS \n\n## Creation of a showcase website as part of a study project\nAs part of a project for my first year of my Bachelor's degree in Computer Science, I collaborated with a team to develop a showcase website for a fictional company called KohFrais.  \nOur work was divided into several steps:\n- Creation of a graphic design\n- Designing the logo and graphic assets\n- Development of the website\n- Deployment\n- Presentation defense\n\nThroughout the project, we used Gitlab at our university to save our work step by step, which allowed me to learn the importance of tools like **git**.\n\n![](screens/kohFrait1.png)",
+    "markdown": "# KohFrais Website\n\n SKILL_HTML SKILL_CSS SKILL_JS \n\n## Creation of a showcase website as part of a study project\nAs part of a project for my first year of my Bachelor's degree in Computer Science, I collaborated with a team to develop a showcase website for a fictional company called KohFrais.  \nOur work was divided into several steps:\n- Creation of a graphic design\n- Designing the logo and graphic assets\n- Development of the website\n- Deployment\n- Presentation defense\n\nThroughout the project, we used Gitlab at our university to save our work step by step, which allowed me to learn the importance of tools like **git**.\n\n![](screens/kohFrait1.png)",
     "active": true
   },
   {
@@ -87,6 +87,15 @@
     "thumbnail": "",
     "data": "",
     "markdown": "# Markdown to PDF Conversion Service\n\n SKILL_DOCKER SKILL_BASH SKILL_PHP SKILL_TEAM_WORK\n\n## Overview\n As part of a project undertaken during my first year of studies in Computer Science, I successfully developed a robust Markdown to PDF converter. The project integrated various technologies to ensure efficiency and scalability.\n\n## Technologies Employed\n- ### Docker :\n   - Docker was strategically chosen for its seamless deployment and scalability features. This containerization solution provided an easy and efficient means to manage the application.\n- ### Bash :\n   - The project leveraged Bash scripting to continuously monitor for new markdown documents. Upon detecting a new document, the script seamlessly triggered a PHP script for conversion.\n\n- ### Php :\n   - Two distinct PHP scripts were employed for different functionalities. The first script efficiently converted markdown files to PDF, while the second script generated a corresponding billing document.\n\n[Source Code](https://github.com/BlasterWhite/MarkdownToPDF/tree/main)",
+    "active": true
+  },
+  {
+    "title": "New Program",
+    "tags": ["team_work", "vuejs", "js", "scss"],
+    "date": "2023",
+    "thumbnail": "",
+    "data": "",
+    "markdown": ",# New program\n\nSKILL_TEAM_WORK SKILL_VUEJS SKILL_JS SKILL_SASS\n\n## Create a fully configurable application\n\nDuring my apprenticeship at CYIM, I was involved in a number of projects, including an update of the program application. The aim of this update was to remake the application by creating reusable and configurable components.\n\nWith the team I was part of, we first created a new VueJS component library. These components are completely configurable, to display certain elements such as the formatting of dates, times and names.\n\nFinally, we updated the application program by adding the newly developed components. This application program is configured in another application, so that a non-computer scientist can configure the appearance of this application to suit the customer.\n\nThis project confirmed the team's cohesion, notably with the setting up of a coding dojo to finish off the project's final touches.",
     "active": true
   }
 ]
