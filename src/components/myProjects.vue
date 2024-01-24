@@ -1,3 +1,20 @@
+<template>
+  <div class="my-projects">
+    <h1>My Key Projects</h1>
+    <p v-for="project in projects" :key="project.id"></p>
+    <ListProjects
+      :is-loading="isLoading"
+      :projects="projects"
+      @select="selectProject"
+    />
+    <show-project
+      :is-loading="isLoading"
+      :projects="projects"
+      :project-selected="projectSelected"
+    />
+  </div>
+</template>
+
 <script lang="ts">
 import { defineComponent } from "vue";
 import ListProjects from "@/components/listProjects.vue";
@@ -48,23 +65,6 @@ export default defineComponent({
   },
 });
 </script>
-
-<template>
-  <div class="my-projects">
-    <h1>My Key Projects</h1>
-    <p v-for="project in projects" :key="project.id"></p>
-    <ListProjects
-      :is-loading="isLoading"
-      :projects="projects"
-      @select="selectProject"
-    />
-    <show-project
-      :is-loading="isLoading"
-      :projects="projects"
-      :project-selected="projectSelected"
-    />
-  </div>
-</template>
 
 <style scoped lang="scss">
 @use "../assets/variables" as v;

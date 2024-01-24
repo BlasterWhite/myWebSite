@@ -1,3 +1,35 @@
+<template>
+  <div id="container">
+    <div id="header">
+      <div>
+        <h1>Hello, I'm</h1>
+        <h1 id="name">Matéo Guézennec</h1>
+        <h3>I'm a <span class="text-red">FullStack Developer</span></h3>
+        <div id="buttons">
+          <a><button id="hire">Hire Me</button></a>
+          <router-link to="/projects"
+            ><button id="portfolio">Portfolio</button></router-link
+          >
+        </div>
+      </div>
+      <div id="HeaderImage">
+        <img src="@/assets/photos/Combine.png" alt="HeaderImage" id="pp" />
+        <img src="@/assets/blob.svg" alt="Backgrounds Image 2" blob2 />
+      </div>
+    </div>
+
+    <top-button />
+
+    <time-line :p-elements="elements" />
+
+    <my-skills />
+
+    <my-projects />
+
+    <my-footer />
+  </div>
+</template>
+
 <script setup lang="ts">
 import TimeLine from "@/components/timeLine.vue";
 import MySkills from "@/components/mySkills.vue";
@@ -33,38 +65,6 @@ const elements = [
   },
 ] as element[];
 </script>
-
-<template>
-  <div id="container">
-    <div id="header">
-      <div>
-        <h1>Hello, I'm</h1>
-        <h1 id="name">Matéo Guézennec</h1>
-        <h3>I'm a <span class="text-red">FullStack Developer</span></h3>
-        <div id="buttons">
-          <a><button id="hire">Hire Me</button></a>
-          <router-link to="/projects"
-            ><button id="portfolio">Portfolio</button></router-link
-          >
-        </div>
-      </div>
-      <div id="HeaderImage">
-        <img src="@/assets/photos/Combine.png" alt="HeaderImage" id="pp" />
-        <img src="@/assets/blob.svg" alt="Backgrounds Image 2" blob2 />
-      </div>
-    </div>
-
-    <top-button />
-
-    <time-line :p-elements="elements" />
-
-    <my-skills />
-
-    <my-projects />
-
-    <my-footer />
-  </div>
-</template>
 
 <style scoped lang="scss">
 div#container {

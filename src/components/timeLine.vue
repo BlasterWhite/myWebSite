@@ -1,3 +1,15 @@
+<template>
+  <div class="timeline">
+    <div v-for="elem in elements" :key="elem.title" :class="'container'">
+      <h1>
+        <span class="material-symbols-outlined"> {{ elem.icon }} </span>
+        {{ elem.title }}
+      </h1>
+      <p v-html="elem.description"></p>
+    </div>
+  </div>
+</template>
+
 <script lang="ts">
 import { defineComponent } from "vue";
 
@@ -27,18 +39,6 @@ export default defineComponent({
   },
 });
 </script>
-
-<template>
-  <div class="timeline">
-    <div v-for="elem in elements" :key="elem.title" :class="'container'">
-      <h1>
-        <span class="material-symbols-outlined"> {{ elem.icon }} </span>
-        {{ elem.title }}
-      </h1>
-      <p v-html="elem.description"></p>
-    </div>
-  </div>
-</template>
 
 <style lang="scss">
 @use "../assets/variables" as v;

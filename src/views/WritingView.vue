@@ -1,44 +1,3 @@
-<script setup lang="ts">
-import data from "@/assets/projects.json";
-import { computed, ref, watch } from "vue";
-import ShowProject from "@/components/showProject.vue";
-import projectModal from "@/components/writing/projectModal.vue";
-import type { Project } from "@/types/project";
-
-const projects = ref<Project[]>([
-  {
-    title: "My Project",
-    tags: [],
-    id: "-1",
-    date: new Date().toLocaleDateString(),
-    thumbnail: "",
-    data: "",
-    markdown:
-      '# My Project\n## Description\n\n1. My list\n2. Thing\n3. Others\n\n```js\nconsole.log("Thing");\n```\n\n---',
-    active: true,
-  },
-]);
-
-projects.value[0] = data[0];
-
-const playground = ref(projects.value[0].markdown);
-const singleLineMarkdown = computed(() => {
-  return playground.value.replace(/"/g, '\\"').replace(/\n/g, "\\n");
-});
-
-watch(playground, (newValue) => {
-  projects.value[0].markdown = newValue;
-});
-
-const projectSelected = ref(0);
-
-watch(projectSelected, (newValue) => {
-  playground.value = data[newValue].markdown;
-});
-
-const openModal = ref(false);
-</script>
-
 <template>
   <div class="writing-project">
     <main>
@@ -86,6 +45,47 @@ const openModal = ref(false);
     />
   </div>
 </template>
+
+<script setup lang="ts">
+import data from "@/assets/projects.json";
+import { computed, ref, watch } from "vue";
+import ShowProject from "@/components/showProject.vue";
+import projectModal from "@/components/writing/projectModal.vue";
+import type { Project } from "@/types/project";
+
+const projects = ref<Project[]>([
+  {
+    title: "My Project",
+    tags: [],
+    id: "-1",
+    date: new Date().toLocaleDateString(),
+    thumbnail: "",
+    data: "",
+    markdown:
+      '# My Project\n## Description\n\n1. My list\n2. Thing\n3. Others\n\n```js\nconsole.log("Thing");\n```\n\n---',
+    active: true,
+  },
+]);
+
+projects.value[0] = data[0];
+
+const playground = ref(projects.value[0].markdown);
+const singleLineMarkdown = computed(() => {
+  return playground.value.replace(/"/g, '\\"').replace(/\n/g, "\\n");
+});
+
+watch(playground, (newValue) => {
+  projects.value[0].markdown = newValue;
+});
+
+const projectSelected = ref(0);
+
+watch(projectSelected, (newValue) => {
+  playground.value = data[newValue].markdown;
+});
+
+const openModal = ref(false);
+</script>
 
 <style scoped lang="scss">
 .writing-project {

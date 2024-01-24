@@ -1,3 +1,10 @@
+<template>
+  <div
+    :class="'project-showcase ' + (isLoading ? 'loading' : '')"
+    v-html="html"
+  ></div>
+</template>
+
 <script lang="ts">
 import { defineComponent } from "vue";
 import { marked } from "marked";
@@ -110,13 +117,6 @@ export default defineComponent({
   },
 });
 </script>
-
-<template>
-  <div
-    :class="'project-showcase ' + (isLoading ? 'loading' : '')"
-    v-html="html"
-  ></div>
-</template>
 
 <style lang="scss">
 @use "../assets/variables" as v;

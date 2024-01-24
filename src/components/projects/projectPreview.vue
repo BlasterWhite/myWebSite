@@ -1,16 +1,3 @@
-<script setup lang="ts">
-import { computed } from "vue";
-
-const props = defineProps({
-  modelValue: {
-    type: Object,
-    required: true,
-  },
-});
-
-const isVisible = computed(() => props.modelValue?.inSearch);
-</script>
-
 <template>
   <div
     class="project-preview"
@@ -22,6 +9,20 @@ const isVisible = computed(() => props.modelValue?.inSearch);
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { computed, type PropType } from "vue";
+import type { Project } from "@/types/project";
+
+const props = defineProps({
+  modelValue: {
+    type: Object as PropType<Project>,
+    required: true,
+  },
+});
+
+const isVisible = computed(() => props.modelValue?.inSearch);
+</script>
 
 <style scoped lang="scss">
 .project-preview {

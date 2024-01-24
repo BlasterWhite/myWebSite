@@ -1,19 +1,3 @@
-<script setup lang="ts">
-import type { PropType } from "vue";
-import type { Project } from "@/types/project";
-import ShowProject from "@/components/showProject.vue";
-import { computed } from "vue";
-
-const props = defineProps({
-  modelValue: {
-    type: Object as PropType<Project>,
-    required: true,
-  },
-});
-
-const projects = computed(() => [props.modelValue] as Project[]);
-</script>
-
 <template>
   <div class="project-fullscreen">
     <div class="project-fullscreen-container">
@@ -33,6 +17,22 @@ const projects = computed(() => [props.modelValue] as Project[]);
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import type { PropType } from "vue";
+import type { Project } from "@/types/project";
+import ShowProject from "@/components/showProject.vue";
+import { computed } from "vue";
+
+const props = defineProps({
+  modelValue: {
+    type: Object as PropType<Project>,
+    required: true,
+  },
+});
+
+const projects = computed(() => [props.modelValue] as Project[]);
+</script>
 
 <style scoped lang="scss">
 .project-fullscreen {

@@ -1,3 +1,63 @@
+<template>
+  <div class="controller">
+    <div @click="slide(432, false)" class="btn">
+      <span class="material-symbols-outlined"> arrow_back_ios_new</span>Previous
+    </div>
+    <div @click="slide(-432, true)" class="btn">
+      Next
+      <span class="material-symbols-outlined"> arrow_forward_ios</span>
+    </div>
+  </div>
+  <div class="list">
+    <div
+      class="list-projects loading"
+      v-if="isLoading"
+      ref="componentRef"
+      @mousemove="dragging"
+      @mousedown="draggingStart"
+      @mouseup="draggingStop"
+      @mouseleave="draggingStop"
+      @touchmove="dragging"
+      @touchstart="draggingStart"
+      @touchend="draggingStop"
+    >
+      <div
+        v-for="i in 10"
+        :key="i"
+        @click="select(i)"
+        :id="'listProject' + i"
+        :class="projectSelected === i ? 'selected' : ''"
+      >
+        {{ i }}
+      </div>
+    </div>
+    <div class="list-projects" v-else>
+      <div
+        v-for="(project, index) in projects"
+        :key="index"
+        @click="select(index)"
+        :id="'listProject' + index"
+        :class="projectSelected === index ? 'selected' : ''"
+        :style="`background: url(${project.thumbnail}); background-size: cover; background-position: center; overflow: hidden;`"
+        @mousemove="dragging"
+        @mousedown="draggingStart"
+        @mouseup="draggingStop"
+        @mouseleave="draggingStop"
+        @touchmove="dragging"
+        @touchstart="draggingStart"
+        @touchend="draggingStop"
+      >
+        <p class="tag" v-if="index < competences_bachelor.length">
+          {{ competences_bachelor[index] }}
+        </p>
+        <p class="title">
+          {{ project.title }}
+        </p>
+      </div>
+    </div>
+  </div>
+</template>
+
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { Project } from "@/types/project";
@@ -111,66 +171,6 @@ export default defineComponent({
   },
 });
 </script>
-
-<template>
-  <div class="controller">
-    <div @click="slide(432, false)" class="btn">
-      <span class="material-symbols-outlined"> arrow_back_ios_new</span>Previous
-    </div>
-    <div @click="slide(-432, true)" class="btn">
-      Next
-      <span class="material-symbols-outlined"> arrow_forward_ios</span>
-    </div>
-  </div>
-  <div class="list">
-    <div
-      class="list-projects loading"
-      v-if="isLoading"
-      ref="componentRef"
-      @mousemove="dragging"
-      @mousedown="draggingStart"
-      @mouseup="draggingStop"
-      @mouseleave="draggingStop"
-      @touchmove="dragging"
-      @touchstart="draggingStart"
-      @touchend="draggingStop"
-    >
-      <div
-        v-for="i in 10"
-        :key="i"
-        @click="select(i)"
-        :id="'listProject' + i"
-        :class="projectSelected === i ? 'selected' : ''"
-      >
-        {{ i }}
-      </div>
-    </div>
-    <div class="list-projects" v-else>
-      <div
-        v-for="(project, index) in projects"
-        :key="index"
-        @click="select(index)"
-        :id="'listProject' + index"
-        :class="projectSelected === index ? 'selected' : ''"
-        :style="`background: url(${project.thumbnail}); background-size: cover; background-position: center; overflow: hidden;`"
-        @mousemove="dragging"
-        @mousedown="draggingStart"
-        @mouseup="draggingStop"
-        @mouseleave="draggingStop"
-        @touchmove="dragging"
-        @touchstart="draggingStart"
-        @touchend="draggingStop"
-      >
-        <p class="tag" v-if="index < competences_bachelor.length">
-          {{ competences_bachelor[index] }}
-        </p>
-        <p class="title">
-          {{ project.title }}
-        </p>
-      </div>
-    </div>
-  </div>
-</template>
 
 <style scoped lang="scss">
 @use "../assets/variables" as v;

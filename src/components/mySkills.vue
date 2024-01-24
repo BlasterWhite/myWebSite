@@ -1,11 +1,3 @@
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  name: "MySkills",
-});
-</script>
-
 <template>
   <div class="my-skills">
     <h1>My Skills</h1>
@@ -44,6 +36,14 @@ export default defineComponent({
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "MySkills",
+});
+</script>
 
 <style scoped lang="scss">
 @use "../assets/variables" as v;
@@ -96,7 +96,6 @@ h1 {
     width: 30%;
     min-height: 300px;
     margin: 0;
-    padding: 0;
     border-radius: 8px;
     background-color: $contaier-color;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.12);
@@ -119,7 +118,6 @@ h1 {
 
     ul {
       list-style: "- ";
-      margin: 0;
       padding: 0;
       margin: 16px 0 0 8px;
 

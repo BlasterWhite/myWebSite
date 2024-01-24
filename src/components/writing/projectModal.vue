@@ -1,24 +1,3 @@
-<script setup lang="ts">
-import { ref } from "vue";
-
-const props = defineProps({
-  markdown: {
-    type: String,
-    default: "",
-  },
-});
-
-const emit = defineEmits({
-  close: () => true,
-});
-
-const projectTitle = ref("");
-const projectThumbnail = ref("");
-const projectDate = ref("");
-const projectTags = ref("");
-const projectMarkdown = ref(props.markdown || "");
-</script>
-
 <template>
   <div class="project-modal">
     <div class="project-modal-content">
@@ -85,6 +64,27 @@ const projectMarkdown = ref(props.markdown || "");
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+
+const props = defineProps({
+  markdown: {
+    type: String,
+    default: "",
+  },
+});
+
+const emit = defineEmits({
+  close: () => true,
+});
+
+const projectTitle = ref("");
+const projectThumbnail = ref("");
+const projectDate = ref("");
+const projectTags = ref("");
+const projectMarkdown = ref(props.markdown || "");
+</script>
 
 <style scoped lang="scss">
 .project-modal {
