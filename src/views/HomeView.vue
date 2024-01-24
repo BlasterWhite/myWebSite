@@ -74,110 +74,110 @@ div#container {
   max-width: 98vw;
   /* background-color: #ff0e0e69; */
   margin: 206px auto 0 auto;
-}
 
-h1,
-h2,
-h3,
-h1 *,
-h2 *,
-h3 * {
-  font-weight: 700;
-}
-
-h1 {
-  font-size: 4.5rem;
-}
-
-h3 {
-  font-size: 1.8rem;
-}
-.text-red {
-  color: var(--color-red);
-}
-
-h1#name {
-  background: linear-gradient(89.31deg, #00ff38 -1.64%, #00d1ff 100%);
-  width: fit-content;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-div#header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 0 0 100px 0;
-}
-
-div#buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 128px;
-
-  * {
-    margin: 12px 0;
+  h1,
+  h2,
+  h3,
+  h1 *,
+  h2 *,
+  h3 * {
+    font-weight: 700;
   }
-}
-a {
-  button {
-    background: var(--gradient-red);
-    border: none;
-    min-width: fit-content;
-    padding: 16px 24px;
-    border-radius: 999px;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin: 10px;
-    cursor: pointer;
-    transition: 0.3s;
 
-    &:hover {
-      transform: scale(1.1);
-    }
+  h1 {
+    font-size: 4.5rem;
+  }
 
-    &#portfolio {
-      padding: calc(16px - 3px) calc(24px - 3px);
-      background: none;
-      border: 3px solid var(--color-red);
-      color: var(--color-red);
+  h3 {
+    font-size: 1.8rem;
+  }
+  .text-red {
+    color: var(--color-red);
+  }
+
+  h1#name {
+    background: linear-gradient(89.31deg, #00ff38 -1.64%, #00d1ff 100%);
+    width: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  div#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 0 100px 0;
+  }
+
+  div#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 128px;
+
+    * {
+      margin: 12px 0;
     }
   }
-}
+  a {
+    button {
+      background: var(--gradient-red);
+      border: none;
+      min-width: fit-content;
+      padding: 16px 24px;
+      border-radius: 999px;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 10px;
+      cursor: pointer;
+      transition: 0.3s;
 
-div#HeaderImage {
-  min-width: 250px;
-  min-height: 250px;
-  max-width: 450px;
-  max-height: 450px;
-  margin: 0 164px;
-  position: relative;
-  top: -100px;
+      &:hover {
+        transform: scale(1.1);
+      }
 
-  img {
-    width: 100%;
+      &#portfolio {
+        padding: calc(16px - 3px) calc(24px - 3px);
+        background: none;
+        border: 3px solid var(--color-red);
+        color: var(--color-red);
+      }
+    }
   }
 
-  img#pp {
-    z-index: 1;
-    width: 150%;
-  }
+  div#HeaderImage {
+    min-width: 250px;
+    min-height: 250px;
+    max-width: 450px;
+    max-height: 450px;
+    margin: 0 164px;
+    position: relative;
+    top: -100px;
 
-  img[blob2] {
-    filter: invert(66%) sepia(88%) saturate(602%) hue-rotate(358deg)
-      brightness(102%) contrast(104%);
-    transform: rotate(-69.5deg);
-    position: absolute;
-    top: -24%;
-    left: -80%;
-    width: 300%;
-    z-index: -2;
-    animation: infinite 15s floating;
+    img {
+      width: 100%;
+    }
+
+    img#pp {
+      z-index: 1;
+      width: 150%;
+    }
+
+    img[blob2] {
+      filter: invert(66%) sepia(88%) saturate(602%) hue-rotate(358deg)
+        brightness(102%) contrast(104%);
+      transform: rotate(-69.5deg);
+      position: absolute;
+      top: -24%;
+      left: -80%;
+      width: 300%;
+      z-index: -2;
+      animation: infinite 15s floating;
+    }
   }
 }
 
@@ -186,20 +186,23 @@ div#HeaderImage {
 **********************/
 /* Set backgrounds of the body to red when screen is smaller than 1300px */
 @media screen and (max-width: 1300px) {
-  div#header {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 300px;
-  }
-
-  div#HeaderImage {
-    margin: 0;
-    top: 30px;
-    left: -90px;
-  }
-
   div#container {
     margin: 0;
+    width: 100%;
+    max-width: 100vw;
+    padding: 1rem;
+
+    div#header {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 300px;
+    }
+
+    div#HeaderImage {
+      margin: 0;
+      top: 30px;
+      left: -90px;
+    }
   }
 }
 
@@ -211,7 +214,7 @@ div#HeaderImage {
     transform: rotate(-69.5deg) translate(0, 0px);
   }
   50% {
-    transform: rotate(-69.5deg) translate(0, 15px);
+    transform: rotate(-32deg) translate(0, 25px);
   }
   100% {
     transform: rotate(-69.5deg) translate(0, -0px);
