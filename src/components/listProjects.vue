@@ -7,7 +7,7 @@ export default defineComponent({
   props: {
     projects: {
       type: Array as () => Project[],
-      default: [],
+      default: [] as Project[],
     },
     isLoading: {
       type: Boolean,
@@ -47,7 +47,7 @@ export default defineComponent({
   methods: {
     select(i: number) {
       const element = document.getElementById("listProject" + i);
-      if (element && this.isDragging === false) {
+      if (element && !this.isDragging) {
         document
           .getElementsByClassName("selected")[0]
           ?.classList.remove("selected");

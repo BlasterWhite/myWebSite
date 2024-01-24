@@ -11,7 +11,10 @@ type element = {
 export default defineComponent({
   name: "TimeLine",
   props: {
-    pElements: Array as () => element[],
+    pElements: {
+      type: Array as () => element[],
+      default: [] as element[],
+    },
   },
 
   computed: {

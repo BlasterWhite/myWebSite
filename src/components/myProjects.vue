@@ -19,7 +19,7 @@ export default defineComponent({
 
   computed: {
     projects() {
-      let projects = [] as Project[];
+      const projects = [] as Project[];
 
       // Filter projects by starProject
       this.starProject.forEach((id) => {
@@ -54,14 +54,14 @@ export default defineComponent({
     <h1>My Key Projects</h1>
     <p v-for="project in projects" :key="project.id"></p>
     <ListProjects
-      :isLoading="isLoading"
+      :is-loading="isLoading"
       :projects="projects"
       @select="selectProject"
     />
     <show-project
-      :isLoading="isLoading"
+      :is-loading="isLoading"
       :projects="projects"
-      :projectSelected="projectSelected"
+      :project-selected="projectSelected"
     />
   </div>
 </template>

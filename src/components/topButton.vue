@@ -21,7 +21,7 @@ export default defineComponent({
         behavior: "smooth",
       });
     },
-    handleScroll(event: Event) {
+    handleScroll() {
       this.show = true;
       window.removeEventListener("scroll", this.handleScroll);
     },

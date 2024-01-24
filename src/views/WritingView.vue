@@ -72,9 +72,9 @@ const openModal = ref(false);
         <p>Here is where you can see your code</p>
         <div id="preview-content">
           <show-project
-            :isLoading="false"
+            :is-loading="false"
             :projects="projects"
-            :projectSelected="0"
+            :project-selected="0"
           />
         </div>
       </div>

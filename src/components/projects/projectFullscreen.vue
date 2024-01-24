@@ -26,9 +26,9 @@ const projects = computed(() => [props.modelValue] as Project[]);
         </svg>
       </div>
       <show-project
-        :isLoading="false"
+        :is-loading="false"
         :projects="projects"
-        :projectSelected="0"
+        :project-selected="0"
       />
     </div>
   </div>

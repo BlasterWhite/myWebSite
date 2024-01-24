@@ -1,39 +1,3 @@
-<script setup lang="ts">
-import ProjectPreview from "@/components/projects/projectPreview.vue";
-import data from "@/assets/projects.json";
-import { computed, ref, watch } from "vue";
-import type { Project } from "@/types/project";
-import ProjectFullscreen from "@/components/projects/projectFullscreen.vue";
-
-const projects = ref(
-  data.map((project) => Object.assign({ inSearch: true }, project)),
-);
-const search = ref("");
-
-const noResults = computed(() =>
-  projects.value.every((project: { inSearch: boolean }) => !project.inSearch),
-);
-watch(search, (value) => {
-  projects.value = data.map((project) =>
-    Object.assign({ inSearch: isProjectSearch(project, value) }, project),
-  );
-});
-
-function isProjectSearch(project: Project, search: String): boolean {
-  if (project.title.toLowerCase().includes(search.toLowerCase())) return true;
-  return project.tags.some((tag: String) =>
-    tag.toLowerCase().includes(search.toLowerCase()),
-  );
-}
-
-const fullscreen = ref(false);
-const projectFullscreen = ref<Project>(projects.value[0] ?? null);
-function openFullscreen(project: Project) {
-  projectFullscreen.value = project;
-  fullscreen.value = true;
-}
-</script>
-
 <template>
   <div class="my-projects">
     <a href="/">← Back to home</a>
@@ -65,10 +29,46 @@ function openFullscreen(project: Project) {
     <project-fullscreen
       v-if="fullscreen"
       @close="fullscreen = false"
-      :model-value="projectFullscreen"
+      :model-value="projectInFullscreen"
     />
   </div>
 </template>
+
+<script setup lang="ts">
+import ProjectPreview from "@/components/projects/projectPreview.vue";
+import data from "@/assets/projects.json";
+import { computed, ref, watch } from "vue";
+import type { Project } from "@/types/project";
+import ProjectFullscreen from "@/components/projects/projectFullscreen.vue";
+
+const projects = ref(
+  data.map((project) => Object.assign({ inSearch: true }, project)),
+);
+const search = ref("");
+
+const noResults = computed(() =>
+  projects.value.every((project: { inSearch: boolean }) => !project.inSearch),
+);
+watch(search, (value) => {
+  projects.value = data.map((project) =>
+    Object.assign({ inSearch: isProjectSearch(project, value) }, project),
+  );
+});
+
+function isProjectSearch(project: Project, search: string): boolean {
+  if (project.title.toLowerCase().includes(search.toLowerCase())) return true;
+  return project.tags.some((tag: string) =>
+    tag.toLowerCase().includes(search.toLowerCase()),
+  );
+}
+
+const fullscreen = ref(false);
+const projectInFullscreen = ref<Project>(projects.value[0] ?? null);
+function openFullscreen(project: Project) {
+  projectInFullscreen.value = project;
+  fullscreen.value = true;
+}
+</script>
 
 <style scoped lang="scss">
 .my-projects {

@@ -75,7 +75,7 @@ export default defineComponent({
   props: {
     projects: {
       type: Array as () => Project[],
-      default: [],
+      default: [] as Project[],
     },
     isLoading: {
       type: Boolean,
