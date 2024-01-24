@@ -60,7 +60,6 @@ const projects = ref<Project[]>([
     id: "-1",
     date: new Date().toLocaleDateString(),
     thumbnail: "",
-    data: "",
     markdown:
       '# My Project\n## Description\n\n1. My list\n2. Thing\n3. Others\n\n```js\nconsole.log("Thing");\n```\n\n---',
     active: true,
