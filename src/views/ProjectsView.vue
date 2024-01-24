@@ -51,7 +51,10 @@ const noResults = computed(() =>
 );
 watch(search, (value) => {
   projects.value = data.map((project) =>
-    Object.assign({ inSearch: isProjectSearch(project, value) }, project),
+    Object.assign(
+      { inSearch: isProjectSearch(project, value.trim()) },
+      project,
+    ),
   );
 });
 
