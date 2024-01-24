@@ -30,7 +30,7 @@ export default defineComponent({
       isLoading: false,
       projectsRaw: projectsData as Project[],
       projectSelected: 0,
-      starProject: ["2", "3", "1", "1", "1", "1"],
+      starProject: ["2", "3", "1", "1", "1", "10"],
     };
   },
 

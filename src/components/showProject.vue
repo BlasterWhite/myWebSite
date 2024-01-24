@@ -1,81 +1,33 @@
 <template>
-  <div
-    :class="'project-showcase ' + (isLoading ? 'loading' : '')"
-    v-html="html"
-  ></div>
+  <div :class="'project-showcase ' + (isLoading ? 'loading' : '')">
+    <div class="project-showcase-header">
+      <div class="project-showcase-header-title">
+        <h1 class="project-showcase-header-title-label">
+          {{ projects[projectSelected].title }}
+        </h1>
+        <span class="project-showcase-header-title-date">{{
+          projects[projectSelected].date
+        }}</span>
+      </div>
+      <div class="project-showcase-header-tags">
+        <span
+          v-for="tag in projects[projectSelected].tags"
+          :key="tag"
+          class="tag"
+          :class="'tag-' + tag.toLowerCase()"
+        >
+          {{ tag }}
+        </span>
+      </div>
+    </div>
+    <div class="project-showcase-container" v-html="html"></div>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import { marked } from "marked";
 import type { Project } from "@/types/project";
-
-const tags = [
-  {
-    key: "SKILL_TEAM_WORK",
-    value: '<span class="ts">Team Work</span>',
-  },
-  {
-    key: "SKILL_HTML",
-    value: '<span class="html">HTML</span>',
-  },
-  {
-    key: "SKILL_JS",
-    value: '<span class="js">JavaScript</span>',
-  },
-  {
-    key: "SKILL_CSS",
-    value: '<span class="css">CSS</span>',
-  },
-  {
-    key: "SKILL_VUEJS",
-    value: '<span class="vue">VueJS</span>',
-  },
-  {
-    key: "SKILL_SASS",
-    value: '<span class="css">Sass</span>',
-  },
-  {
-    key: "SKILL_SQL",
-    value: '<span class="sql">SQL</span>',
-  },
-  {
-    key: "SKILL_ARDUINO",
-    value: '<span class="arduino">Arduino</span>',
-  },
-  {
-    key: "SKILL_PYTHON",
-    value: '<span class="python">Python</span>',
-  },
-  {
-    key: "SKILL_NODEJS",
-    value: '<span class="nodejs">NodeJS</span>',
-  },
-  {
-    key: "SKILL_TS",
-    value: '<span class="ts">TypeScript</span>',
-  },
-  {
-    key: "SKILL_NETWORK",
-    value: '<span class="network">Network</span>',
-  },
-  {
-    key: "SKILL_C",
-    value: '<span class="c">C language</span>',
-  },
-  {
-    key: "SKILL_PHP",
-    value: '<span class="php">PHP</span>',
-  },
-  {
-    key: "SKILL_BASH",
-    value: '<span class="bash">Bash</span>',
-  },
-  {
-    key: "SKILL_DOCKER",
-    value: '<span class="docker">Docker</span>',
-  },
-];
 
 export default defineComponent({
   name: "ShowProject",
@@ -96,9 +48,6 @@ export default defineComponent({
   methods: {
     postHtml(text: string) {
       let newText = text;
-      tags.forEach((tag) => {
-        newText = newText.replace(tag.key, tag.value);
-      });
       newText = newText.replace(
         /<a href="([^"]+)">([^<]+)<\/a>/g,
         '<a href="$1" target="_blank">$2</a>',
@@ -121,157 +70,214 @@ export default defineComponent({
 <style lang="scss">
 @use "../assets/variables" as v;
 
-$contaier-color: #f6f6f6;
-
 .project-showcase {
-  width: calc(100% - calc(32px * 2));
-  margin-left: 32px;
   height: 100%;
   min-height: 300px;
-  background-color: $contaier-color;
-  border-radius: 10px;
-  padding: 32px;
-  text-align: left;
-  color: #1a1a1a;
+  background-color: v.$background-content;
+  border-radius: v.$border-radius;
+  color: v.$color-text;
+  padding: 1rem;
 
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  &-header {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
 
-    &::before {
-      content: "";
-      width: 8px;
-      height: 1.5rem;
-      margin: 0.5rem 0.5rem 0.5rem 0;
-      background: #ec3b3b;
-      border-radius: 5px;
+    &-title {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: flex-start;
+      gap: 0.5rem;
+
+      &-label {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 2.25rem;
+        margin: 0;
+      }
+
+      & &-date {
+        font-size: 1rem;
+        color: #696969;
+      }
+    }
+
+    &-tags {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      .tag {
+        font-size: 0.8rem;
+        color: #fff;
+        background: #00d1ff;
+        background: linear-gradient(45deg, #0b4265 0%, #38b4ff 100%);
+        border-radius: 5rem;
+        text-transform: capitalize;
+        padding: 0.25rem 0.5rem;
+        font-weight: 600;
+
+        &-html {
+          background: #e34c26;
+          background: linear-gradient(45deg, #e34c26 0%, #f16529 100%);
+        }
+
+        &-css,
+        &-sass,
+        &-scss {
+          background: #264de4;
+          background: linear-gradient(45deg, #264de4 0%, #4077f3 100%);
+        }
+
+        &-javascript {
+          color: #000;
+          background: #f0db4f;
+          background: linear-gradient(45deg, #f0db4f 0%, #f5d33f 100%);
+        }
+
+        &-vuejs {
+          background: #348f2c;
+          background: linear-gradient(45deg, #348f2c 0%, #52bd46 100%);
+        }
+
+        &-nodejs {
+          background: #68a063;
+          background: linear-gradient(45deg, #68a063 0%, #89da82 100%);
+        }
+
+        &-arduino {
+          background: #00979d;
+          background: linear-gradient(45deg, #00979d 0%, #00d1da 100%);
+        }
+
+        &-python {
+          background: #306998;
+          background: linear-gradient(45deg, #306998 0%, #4ea9f5 100%);
+        }
+
+        &-network,
+        &-git {
+          background: #d32f2f;
+          background: linear-gradient(45deg, #d32f2f 0%, #ff8282 100%);
+        }
+
+        &-sql {
+          background: #f29111;
+          background: linear-gradient(45deg, #f29111 0%, #fcb670 100%);
+        }
+
+        &-typescript {
+          background: #007acc;
+          background: linear-gradient(45deg, #007acc 0%, #48b5ff 100%);
+        }
+
+        &-c {
+          background: #a8b9cc;
+        }
+
+        &-php,
+        &-docker {
+          background: #4f5b93;
+          background: linear-gradient(45deg, #4f5b93 0%, #7d8fe0 100%);
+        }
+
+        &-bash {
+          background: #4eaa25;
+          background: linear-gradient(45deg, #4eaa25 0%, #70f138 100%);
+        }
+      }
     }
   }
 
-  h2 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  &-container {
+    padding: 2rem;
 
-    &::before {
-      content: "";
-      width: 8px;
-      height: 0.7rem;
-      margin: 0.25rem 0.5rem 0.25rem 0;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &::before {
+        content: "";
+        width: 8px;
+        height: 1.5rem;
+        margin: 0.5rem 0.5rem 0.5rem 0;
+        background: #ec3b3b;
+        border-radius: 5px;
+      }
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &::before {
+        content: "";
+        width: 8px;
+        height: 0.7rem;
+        margin: 0.25rem 0.5rem 0.25rem 0;
+        background: #3ba8ec;
+        border-radius: 5px;
+      }
+    }
+
+    a {
+      color: #fff;
       background: #3ba8ec;
+      padding: 0.5rem 1rem;
       border-radius: 5px;
+      margin: 8px 0;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    pre {
+      background: #1e1e1e;
+      color: #f9f9f9;
+      padding: 1rem;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 1000px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      margin: 8px;
+    }
+
+    hr {
+      margin: 16px 16px;
+      color: rgba(0, 0, 0, 0.2);
+      border: 0.5px solid rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
     }
   }
 
-  a {
-    color: #fff;
-    background: #3ba8ec;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    margin: 8px 0;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  pre {
-    background: #1e1e1e;
-    color: #f9f9f9;
-    padding: 1rem;
-    border-radius: 5px;
-    overflow-x: auto;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-
+  /**
+     All Tags
+     html, css, js, vue, nodejs, arduino, python, network, sql, ts, c, php, bash, docker
+   */
   &.loading {
     animation: loading 1.5s infinite;
     user-select: none;
-  }
-
-  img {
-    max-width: 1000px;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 16px;
-  }
-
-  p {
-    margin: 16px;
-  }
-
-  hr {
-    margin: 16px 16px;
-    color: rgba(0, 0, 0, 0.2);
-    border: 0.5px solid rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-  }
-
-  span {
-    background: rgb(24, 24, 90);
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    margin-right: 8px;
-    font-weight: 600;
-
-    & > img {
-      width: 10px;
-      height: 10px;
-      color: red;
-      top: 50%;
-      transform: translateY(50%);
-    }
-
-    &.html {
-      background: rgb(255, 99, 71);
-    }
-
-    &.css {
-      background: rgb(0, 191, 255);
-    }
-
-    &.js {
-      background: rgb(255, 215, 0);
-      color: #000;
-    }
-
-    &.vue,
-    &.nodejs {
-      background: rgb(0, 128, 0);
-    }
-
-    &.arduino,
-    &.bash {
-      background: rgb(0, 129, 132);
-    }
-
-    &.python,
-    &.network {
-      background: rgb(0, 0, 255);
-    }
-
-    &.sql {
-      background: rgb(255, 0, 255);
-    }
-
-    &.ts,
-    &.docker {
-      background: rgb(0, 122, 204);
-    }
-
-    &.c,
-    &.php {
-      background: rgb(36, 110, 150);
-    }
   }
 }
 

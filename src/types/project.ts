@@ -4,7 +4,6 @@ export interface Project {
   thumbnail: string;
   tags: string[];
   date: string;
-  data: string;
   markdown: string;
   active: boolean;
 }
