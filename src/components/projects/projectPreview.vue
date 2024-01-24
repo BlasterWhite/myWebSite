@@ -25,7 +25,9 @@ const props = defineProps({
   },
 });
 
-const isVisible = computed(() => props.modelValue?.inSearch);
+const isVisible = computed(
+  () => props.modelValue?.inSearch && props.modelValue?.active,
+);
 </script>
 
 <style scoped lang="scss">
