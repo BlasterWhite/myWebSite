@@ -10,6 +10,7 @@
         </svg>
       </div>
       <show-project
+        class="project-fullscreen-container-content"
         :is-loading="false"
         :projects="projects"
         :project-selected="0"
@@ -52,16 +53,21 @@ const projects = computed(() => [props.modelValue] as Project[]);
   .project-fullscreen-container {
     width: 80%;
     min-height: 80%;
+    max-height: calc(100% - 4rem);
     background-color: #f6f6f6;
     border-radius: 8px;
-    padding: 2rem 1rem;
-    overflow-y: auto;
+    padding: 0 1rem;
+    overflow: hidden;
     position: relative;
+    .project-fullscreen-container-content {
+      overflow-y: auto;
+    }
 
     #project-fullscreen-close {
       position: absolute;
-      top: 16px;
-      right: 16px;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1;
 
       &:hover {
         cursor: pointer;
