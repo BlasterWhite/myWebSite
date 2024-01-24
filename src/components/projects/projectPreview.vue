@@ -14,9 +14,13 @@
 import { computed, type PropType } from "vue";
 import type { Project } from "@/types/project";
 
+interface ProjectSearch extends Project {
+  inSearch: boolean;
+}
+
 const props = defineProps({
   modelValue: {
-    type: Object as PropType<Project>,
+    type: Object as PropType<ProjectSearch>,
     required: true,
   },
 });
