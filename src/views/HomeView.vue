@@ -6,7 +6,9 @@
         <h1 id="name">Matéo Guézennec</h1>
         <h3>I'm a <span class="text-red">FullStack Developer</span></h3>
         <div id="buttons">
-          <a><button id="hire">Hire Me</button></a>
+          <a href="https://www.linkedin.com/in/mateo-guezennec/" target="_blank"
+            ><button id="hire">Hire Me</button></a
+          >
           <router-link to="/projects"
             ><button id="portfolio">Portfolio</button></router-link
           >
@@ -20,7 +22,7 @@
 
     <top-button />
 
-    <time-line :p-elements="elements" />
+    <time-line :p-elements="elements" :p-inverse="true" />
 
     <my-skills />
 
@@ -40,27 +42,48 @@ import MyFooter from "@/components/myFooter.vue";
 type element = {
   title: string;
   description: string;
-  date: string;
+  date: {
+    start: Date;
+    end: Date;
+  };
   icon: string;
 };
 
 const elements = [
   {
-    title: "Bachelor",
-    description: "I have a <span red>bachelor</span>",
-    date: "test1",
+    title: "Engineering Degree",
+    description: "I have a <span orange>Engineering Degree</span>",
+    date: {
+      start: new Date("2024-09-01"),
+      end: new Date("2027-08-31"),
+    },
     icon: "school",
   },
   {
     title: "Developer",
     description: "Developer at <span green>Cyber Imagination</span>",
-    date: "test2",
+    date: {
+      start: new Date("2022-09-01"),
+      end: new Date("2024-08-31"),
+    },
     icon: "work",
+  },
+  {
+    title: "Bachelor",
+    description: "I have a <span red>bachelor</span>",
+    date: {
+      start: new Date("2021-09-01"),
+      end: new Date("2024-08-31"),
+    },
+    icon: "school",
   },
   {
     title: "High School",
     description: "I have a <span purple>High School Degree</span>",
-    date: "test1",
+    date: {
+      start: new Date("2018-09-01"),
+      end: new Date("2021-08-31"),
+    },
     icon: "labs",
   },
 ] as element[];

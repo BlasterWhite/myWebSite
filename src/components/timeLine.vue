@@ -1,10 +1,14 @@
 <template>
   <div class="timeline">
     <div v-for="elem in elements" :key="elem.title" :class="'container'">
-      <h1>
+      <div class="row">
         <span class="material-symbols-outlined"> {{ elem.icon }} </span>
-        {{ elem.title }}
-      </h1>
+        <span class="title">{{ elem.title }}</span>
+        <span v-if="elem.date?.start && elem.date?.end" class="dates">
+          {{ dayjs(elem.date.start).format("MMM YYYY") }} -
+          {{ dayjs(elem.date.end).format("MMM YYYY") }}
+        </span>
+      </div>
       <p v-html="elem.description"></p>
     </div>
   </div>
@@ -12,11 +16,15 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import dayjs from "dayjs";
 
 type element = {
   title: string;
   description: string;
-  date: string;
+  date: {
+    start: Date;
+    end: Date;
+  };
   icon: string;
 };
 
@@ -27,11 +35,25 @@ export default defineComponent({
       type: Array as () => element[],
       default: [] as element[],
     },
+    pInverse: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {
+    dayjs() {
+      return dayjs;
+    },
     elements() {
-      return this?.pElements || [];
+      return (
+        this?.pElements.sort((a, b) => {
+          if (this.pInverse) {
+            return a.date.start.getTime() - b.date.start.getTime();
+          }
+          return b.date.start.getTime() - a.date.start.getTime();
+        }) || []
+      );
     },
     nbElements() {
       return this.elements.length;
@@ -69,6 +91,7 @@ $text-color: #000000;
 
     @media (max-width: 1100px) {
       width: 100%;
+      height: auto;
     }
 
     &:not(:first-child) {
@@ -150,16 +173,37 @@ $text-color: #000000;
       }
     }
 
-    h1 {
-      font-size: 28px;
-      font-weight: 600;
-      margin: 0;
-      line-height: 32px;
-      height: 32px;
+    div.row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 8px 0;
 
-      span.material-symbols-outlined {
-        font-size: 32px;
-        margin-right: 8px;
+      span {
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      span.title {
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      span.dates {
+        font-size: 14px;
+        font-weight: 400;
+        opacity: 0.5;
+      }
+
+      @media (max-width: 1100px) {
+        flex-direction: column;
+        gap: 4px;
+
+        span.material-symbols-outlined {
+          display: none;
+        }
       }
     }
 
@@ -171,28 +215,45 @@ $text-color: #000000;
       height: 24px;
 
       & span {
-        &[red] {
-          color: v.$color-red;
+        &::after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          background: red;
+          height: 2px;
+          transition: 0.3s;
+          z-index: -1;
         }
 
-        &[blue] {
-          color: v.$color-blue;
+        &:hover::after {
+          height: 100%;
         }
 
-        &[green] {
-          color: v.$color-green;
+        &[red]::after {
+          background: v.$color-red;
         }
 
-        &[yellow] {
-          color: v.$color-yellow;
+        &[blue]::after {
+          background: v.$color-blue;
         }
 
-        &[orange] {
-          color: v.$color-orange;
+        &[green]::after {
+          background: v.$color-green;
         }
 
-        &[purple] {
-          color: v.$color-purple;
+        &[yellow]::after {
+          background: v.$color-yellow;
+        }
+
+        &[orange]::after {
+          background: v.$color-orange;
+        }
+
+        &[purple]::after {
+          background: v.$color-purple;
         }
       }
     }

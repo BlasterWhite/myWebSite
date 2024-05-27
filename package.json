@@ -13,6 +13,7 @@
   },
   "type": "module",
   "dependencies": {
+    "dayjs": "^1.11.11",
     "marked": "^10.0.0",
     "vite-plugin-static-copy": "^0.17.0",
     "vue": "^3.2.47",
