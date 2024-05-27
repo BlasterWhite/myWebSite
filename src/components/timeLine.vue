@@ -47,12 +47,14 @@ export default defineComponent({
     },
     elements() {
       return (
-        this?.pElements.sort((a, b) => {
-          if (this.pInverse) {
-            return a.date.start.getTime() - b.date.start.getTime();
-          }
-          return b.date.start.getTime() - a.date.start.getTime();
-        }) || []
+        this.pElements
+          .map((e) => e) // Hack to copy the array and not modify the props
+          .sort((a, b) => {
+            if (this.pInverse) {
+              return a.date.start.getTime() - b.date.start.getTime();
+            }
+            return b.date.start.getTime() - a.date.start.getTime();
+          }) || []
       );
     },
     nbElements() {
