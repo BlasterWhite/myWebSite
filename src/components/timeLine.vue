@@ -4,9 +4,9 @@
       <div class="row">
         <span class="material-symbols-outlined"> {{ elem.icon }} </span>
         <span class="title">{{ elem.title }}</span>
-        <span v-if="elem.date?.start && elem.date?.end" class="dates">
+        <span v-if="elem.date?.start" class="dates">
           {{ dayjs(elem.date.start).format("MMM YYYY") }} -
-          {{ dayjs(elem.date.end).format("MMM YYYY") }}
+          {{ elem.date.end ? dayjs(elem.date.end).format("MMM YYYY") : "Now" }}
         </span>
       </div>
       <p v-html="elem.description"></p>
@@ -23,7 +23,7 @@ type element = {
   description: string;
   date: {
     start: Date;
-    end: Date;
+    end?: Date;
   };
   icon: string;
 };
@@ -81,7 +81,7 @@ $text-color: #000000;
     z-index: 1;
     padding: 8px;
     margin: 0 8px;
-    height: 100px;
+    min-height: 100px;
     width: 500px;
     text-align: center;
     border-radius: 8px;
@@ -212,7 +212,6 @@ $text-color: #000000;
       font-weight: 400;
       margin: 8px 0 0 0;
       line-height: 24px;
-      height: 24px;
 
       & span {
         &::after {

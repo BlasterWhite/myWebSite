@@ -44,7 +44,7 @@ type element = {
   description: string;
   date: {
     start: Date;
-    end: Date;
+    end?: Date;
   };
   icon: string;
 };
@@ -52,7 +52,8 @@ type element = {
 const elements = [
   {
     title: "Engineering Degree",
-    description: "I have a <span orange>Engineering Degree</span>",
+    description:
+      "I'm studying for an <span orange>engineering degree</span> at ENSSAT in Lannion",
     date: {
       start: new Date("2024-09-01"),
       end: new Date("2027-08-31"),
@@ -64,13 +65,13 @@ const elements = [
     description: "Developer at <span green>Cyber Imagination</span>",
     date: {
       start: new Date("2022-09-01"),
-      end: new Date("2024-08-31"),
     },
     icon: "work",
   },
   {
     title: "Bachelor",
-    description: "I have a <span red>bachelor</span>",
+    description:
+      "I obtained a <span red>bachelor's degree</span> at the IUT in Lannion.",
     date: {
       start: new Date("2021-09-01"),
       end: new Date("2024-08-31"),
@@ -79,7 +80,8 @@ const elements = [
   },
   {
     title: "High School",
-    description: "I have a <span purple>High School Degree</span>",
+    description:
+      "I obtained a <span purple>baccalaureate</span> at the Lycée Vauban in Brest.",
     date: {
       start: new Date("2018-09-01"),
       end: new Date("2021-08-31"),

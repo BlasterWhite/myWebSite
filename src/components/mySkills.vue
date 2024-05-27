@@ -17,11 +17,13 @@
         <h2>hard Skills</h2>
         <ul>
           <li>Web Development</li>
-          <li>VueJS, Scss, Javascript</li>
+          <li>VueJS, Scss, Javascript, NuxtJS, React</li>
           <li>Database</li>
           <li>MySQL, MongoDB, PostgresSQL</li>
           <li>Software development</li>
           <li>Java, C, C#, C++, Python</li>
+          <li>Technologies</li>
+          <li>Git, Docker, GraphQL, REST API, NodeJS</li>
         </ul>
       </div>
       <div class="languages">
@@ -140,6 +142,12 @@ h1 {
           margin-top: -4px;
         }
       }
+    }
+  }
+
+  .languages {
+    ul {
+      list-style: none;
     }
   }
 }

@@ -11,13 +11,15 @@
       <div class="links">
         <h3>Links</h3>
         <div class="links-content">
-          <a href="https://github.com/BlasterWhite"
+          <a href="https://github.com/BlasterWhite" target="_blank"
             ><img src="@/assets/icons8-github.svg" alt="" /> GitHub
           </a>
-          <a href="https://www.linkedin.com/in/mateo-guezennec/"
+          <a href="https://www.linkedin.com/in/mateo-guezennec/" target="_blank"
             ><img src="@/assets/icons8-linkedin.svg" alt="" /> LinkedIn
           </a>
-          <a href="https://stackoverflow.com/users/15594374/blasterwhite"
+          <a
+            href="https://stackoverflow.com/users/15594374/blasterwhite"
+            target="_blank"
             ><img src="@/assets/icons8-stack-overflow.svg" alt="" /> Stack
             Overflow
           </a>

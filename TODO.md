@@ -7,16 +7,16 @@
 - [ ] Add animations when loading the page
 - [ ] Add animations when scrolling
 - [x] Add links
-- [ ] Add tag on preview list (6 skills of Bachelor)
+- [x] Add tag on preview list (6 skills of Bachelor)
 - [ ] Add the official tag of the bachelor as a chips in the keyproject list
-- [ ] Add ENSSAT
-- [ ] Add Date on the Timeline
+- [x] Add ENSSAT
+- [x] Add Date on the Timeline
 - [ ] RESPONSIVE 
 
 ### Project list page
 - [ ] Add animations when loading the page
 - [ ] Add animations when scrolling
-- [ ] Full screen project preview 
+- [x] Full screen project preview 
   - On going
 - [ ] Better filter ?
 - [ ] Add B RPG project, CI/CD, React
