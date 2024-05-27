@@ -1,23 +1,32 @@
-FROM node:lts-alpine
-LABEL authors="matgu"
+# Step 1: Build the Vue.js app
+FROM node:18-alpine AS build-stage
 
-# install simple http server for serving static content
-RUN npm install -g http-server
-
-# make the 'app' folder the current working directory
+# Set the working directory
 WORKDIR /app
 
-# copy both 'package.json' and 'package-lock.json' (if available)
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# install project dependencies
+# Install dependencies
 RUN npm install
 
-# copy project files and folders to the current working directory (i.e. 'app' folder)
+# Copy the rest of the application files
 COPY . .
 
-# build app for production with minification
+# Build the application
 RUN npm run build
 
-EXPOSE 8080
-CMD [ "http-server", "dist" ]
+# Step 2: Serve the app with Nginx
+FROM nginx:alpine
+
+# Copy the built files from the build stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+
+# Copy custom Nginx configuration
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
