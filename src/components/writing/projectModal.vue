@@ -54,8 +54,7 @@
           }}],
     "date": "{{ projectDate }}",
     "thumbnail": "{{ projectThumbnail }}",
-    "data": "",
-    "markdown": `{{ projectMarkdown }}`,
+    "markdown": "{{ projectMarkdown }}",
     "active": true
 }
       </pre

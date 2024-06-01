@@ -19,7 +19,7 @@
 - [x] Full screen project preview 
   - On going
 - [ ] Better filter ?
-- [ ] Add B RPG project, CI/CD, React
+- [x] Add B RPG project, CI/CD, React
 - [ ] Add Flags project
 - [ ] Add POC python ASCII image
 - [ ] RESPONSIVE 

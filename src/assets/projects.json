@@ -88,5 +88,13 @@
     "thumbnail": "screens/maintenance-monochromatic.png",
     "markdown": "## Create a fully configurable application\n\nDuring my apprenticeship at CYIM, I was involved in a number of projects, including an update of the program application. The aim of this update was to remake the application by creating reusable and configurable components.\n\nWith the team I was part of, we first created a new VueJS component library. These components are completely configurable, to display certain elements such as the formatting of dates, times and names.\n\nFinally, we updated the application program by adding the newly developed components. This application program is configured in another application, so that a non-computer scientist can configure the appearance of this application to suit the customer.\n\nThis project confirmed the team's cohesion, notably with the setting up of a coding dojo to finish off the project's final touches.",
     "active": true
+  },
+  {
+    "title": "Book RPG",
+    "tags": ["react", "html", "css", "javasript", "Scss", "team work", "figma", "github", "ci/cd", "docker", "postgresql", "devops"],
+    "date": "2024",
+    "thumbnail": "screens/bookRPG-1.png",
+    "markdown": "## Creation of an interactive book website.\n\nFor a university project, with a team of 5, we created a website to create, maintain and read interactive books.\n\nThese interactive books are based on a type of book where the reader is the hero of the book, having to make choices that will influence the story being told.\n\nWe developed a frontend application and API using a PostgresSQL database. My role was DevOp for the integration of the application on a VPS using a Docker-based containerization system. I also set up a CI/CD with the GitHub action tool.\n\nMy second role was to be the main developer of the front-end application, which was developed in React, in pair with another team member I also made the mock-ups to get a vision of what we wanted to do as UI/UX. \n\n![](screens/bookRPG-1.png)\n\nEach page of the book could be of different type, we developed 4 types of page: \n- the multiple choice page, where the reader has to make a choice.\n- the dice page, where the reader throws dice and must meet certain conditions to win. \n- the enigma page, where the reader must answer an enigma with a tolerance for error, thanks to Levenschtein's algorithm.\n- And finally, the combat page, where the reader rolls dice to fight an enemy.\n\n\nThe biggest feature of our site was the backoffice, which allows the administrator to create and modify adventure books, weapons and equipment.\n\n![](screens/bookRPG-2.png)",
+    "active": true
   }
 ]
