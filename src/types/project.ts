@@ -6,4 +6,5 @@ export interface Project {
   date: string;
   markdown: string;
   active: boolean;
+  ongoing?: boolean;
 }

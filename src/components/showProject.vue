@@ -8,6 +8,13 @@
         <span class="project-showcase-header-title-date">{{
           projects[projectSelected].date
         }}</span>
+        <span
+          class="project-showcase-header-title-ongoing"
+          v-if="projects[projectSelected]?.ongoing"
+        >
+          <span></span>
+          Ongoing
+        </span>
       </div>
       <div class="project-showcase-header-tags">
         <span
@@ -103,6 +110,20 @@ export default defineComponent({
       & &-date {
         font-size: 1rem;
         color: #696969;
+      }
+
+      & &-ongoing {
+        border: 2px red solid;
+        padding: 2px 4px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        border-radius: 50px;
+
+        & > span::before {
+          content: "🔴";
+          margin: 0;
+          animation: blink 1s infinite;
+        }
       }
     }
 
@@ -290,6 +311,18 @@ export default defineComponent({
   }
   100% {
     background-color: #f6f6f6;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 </style>

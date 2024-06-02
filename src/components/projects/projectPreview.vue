@@ -4,6 +4,9 @@
     :style="'background-image: url(' + props.modelValue?.thumbnail + ');'"
     v-if="isVisible"
   >
+    <div class="ongoing" v-if="props.modelValue?.ongoing">
+      <span>Ongoing</span>
+    </div>
     <div class="title">
       {{ props.modelValue?.title || "Project" }}
     </div>
@@ -39,6 +42,19 @@ const isVisible = computed(
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  .ongoing {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #ff0000;
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 3;
+    border-bottom-left-radius: 8px;
+  }
 
   .title {
     font-size: 1.5rem;
