@@ -4,8 +4,8 @@
     "title": "Evaluation Project",
     "date": "2023",
     "tags": ["team work", "vuejs", "javascript", "scss", "git"],
-    "thumbnail": "screens/evaluation.jpg",
-    "markdown": "## Get feedback from an audience in live\n\nDuring my apprenticeship in the CYIM company I encounter many project with Project Evaluation is a part of. This project made me learn a lot about the project management and the importance of the evaluation of a project.\n\nProject Evaluation is a web application that allows the user to evaluate a project. The user can create a project and add the different tasks that compose it. Then, he can evaluate the project by giving a score to each task. The application will then calculate the score of the project and display it to the user.\n\n![](screens/evaluation.jpg)",
+    "thumbnail": "screens/thumbnail_evaluation.png",
+    "markdown": "# Project Evaluation: Live Audience Feedback\n\n## Overview\n\nProject Evaluation is a comprehensive web-based platform designed to gather and analyze real-time feedback from conference attendees. The system is built to accommodate a variety of question types, including multiple-choice, open-ended, star ratings, and ranking.\n\nOne of the key features of the platform is its ability to display the results of the feedback in real-time on the large screen in the conference hall. This allows conference organizers to immediately gauge the audience's reaction and make necessary adjustments to the ongoing conference.\n\n## Applications\n\nThe platform consists of two main applications:\n\n1. **Spectator Application**: This is designed for the conference attendees. It provides a user-friendly interface for them to submit their feedback and opinions on the ongoing conference.\n\n2. **Admin Application**: This is designed for the conference organizers. It allows them to create and manage questionnaires, monitor real-time feedback, and generate insightful reports.\n\n## Technologies Used\n\n### Backend\n\n- JavaScript: The primary programming language used for server-side operations.\n- GraphQL: A query language for APIs that helps in fetching data from the server.\n- MongoDB: A NoSQL database used for storing and managing data.\n- Firebase: A backend-as-a-service (BaaS) platform that provides real-time database and authentication services.\n\n### Frontend\n\n- Vue.js: A progressive JavaScript framework used for building user interfaces.\n- Firebase: Used for real-time data updates and user authentication.\n- Keycloak: An open-source identity and access management solution.\n- SCSS: A preprocessor that extends CSS, used for styling the applications.\n\n### Library\n\n- Vue.js components: A library of reusable Vue.js components was developed to speed up the development process and maintain consistency across the applications.\n\n## Testing and Results\n\nThe applications have been thoroughly tested and the feedback received has been overwhelmingly positive. The system's ability to gather and analyze real-time feedback has proven to be a valuable tool for conference organizers.\n\n## Note\n\nFirebase was primarily used for live data updates and not for authentication in this project.",
     "active": true
   },
   {
@@ -13,8 +13,8 @@
     "title": "My new website",
     "date": "2023",
     "tags": ["vuejs", "nodejs", "typescript", "docker", "git", "scss"],
-    "thumbnail": "screens/uoiUEVD.png",
-    "markdown": "## My new website is finally up and running. I hope you like it!\n\n### Site devised in 2 part : \n\n1. Main Page\n\n\t Description of me \n\n 2. Project / Portfolio\n\n\t List of my most completed projects \n\n![](screens/uoiUEVD.png)",
+    "thumbnail": "screens/screenshot_portfolio2.png",
+    "markdown": "# My Portfolio Project\n\nWelcome to my new website! I am excited to share that my portfolio is finally up and running. I hope you like it!\n\n## Technologies Used\n\nThis project is built using a modern tech stack:\n\n- **VueJS**: For the frontend framework\n- **NodeJS**: For the backend server\n- **TypeScript**: For type safety and better development experience\n- **Docker**: For containerization and easy deployment\n- **Git**: For version control\n- **SCSS**: For styling\n\n## Site Structure\n\nThe site is divided into two main parts:\n\n### 1. Main Page\n\n#### Description\n\nThis section provides a comprehensive overview of my background, including:\n\n- **Education**: Details of my educational qualifications\n- **Professional Experience**: A summary of my professional journey\n- **Skills**:\n  - **Soft Skills**: My interpersonal and communication skills\n  - **Hard Skills**: Technical skills and proficiencies\n- **Languages**: The languages I speak and my proficiency levels\n\n### 2. Projects / Portfolio\n\nIn this section, you can explore all my projects. Each project includes:\n\n- **Project Title**\n- **Description**: Brief overview of the project\n- **Technologies Used**: List of technologies utilized in the project\n- **Links**: Direct links to the project repository or live site\n\n## Conclusion\n\nFeel free to navigate through the different sections to learn more about me and my work. I hope you find my portfolio engaging and informative!\n\n---\n\nThank you for visiting my site!\n\n\n![](screens/screen_portfolio2.png)",
     "active": true
   },
   {
@@ -22,8 +22,8 @@
     "title": "Knight's Tour Chess Algorithm",
     "date": "2022",
     "tags": ["python", "git"],
-    "thumbnail": "screens/1SIMtSd.jpeg",
-    "markdown": "## Implementation of a knight's tour algorithm on a chessboard\n\n\nAs part of a project during my first year of my Computer Science degree, I developed an algorithm to solve the knight's tour problem on a chessboard.  \nThe problem is simple: a knight is placed on the chessboard and it needs to visit every square exactly once without revisiting any square.  \nAfter finding a possible graph, I display it graphically.  \nIn a final version of the program, I added the capability to create a closed tour, meaning the knight will end up on the same square it started from.  \n\n\n![](screens/pbCavalier1.png)",
+    "thumbnail": "screens/thumbnail_chess.jpeg",
+    "markdown": "# Knight's Tour: A Chessboard Challenge\n\n## Overview\n\nAs part of a project during my first year of my Computer Science degree, I developed an algorithm to solve the classic Knight's Tour problem on a standard 8x8 chessboard. The challenge is to move a knight piece around the board, visiting each square exactly once without revisiting any square.\n\n## Algorithm\n\nThe algorithm I developed uses a combination of the Warnsdorff's rule heuristic and the Depth-First Search (DFS) technique to find a possible solution to the problem. Warnsdorff's rule is a simple and effective method that chooses the next move based on the number of onward moves from the subsequent squares. The DFS technique is used to systematically explore all the possible moves and backtrack when necessary.\n\n## Visualization\n\nTo make the solution more engaging and easier to understand, I implemented a graphical representation of the knight's tour. The program displays the chessboard and the knight's movements, allowing users to visualize the solution.\n\n## Closed Tour\n\nIn the final version of the program, I added the capability to create a closed tour. This means that the knight will end up on the same square it started from, making the tour a continuous loop.\n\n## Technologies Used\n\n- Python: The primary programming language used for implementing the algorithm and the graphical representation.\n- Git: A version control system used for tracking the changes made to the code and collaborating with others.",
     "active": true
   },
   {
@@ -39,8 +39,8 @@
       "network",
       "git"
     ],
-    "thumbnail": "screens/AMERICAN-COOP-HOMEPAGE-THB.jpg",
-    "markdown": "## For my Baccalaureate oral exam, I created a chicken coop that transmits captured information to a website.\n### Project Description:\nMy two teammates and I developed a solution to make a backyard chicken habitat connected. We planned to implement the following:\n- RFID chip for chicken counting\n- Temperature sensor\n- Servo motor for opening/closing the door\n- Scale for weighing water\n- Image recognition for egg counting\n- Data transmission to a website\n\nI took care of the website and the Arduino data transmission.\n### The Arduino:\nIn the project, I handled the data transmission to a computer via the network using encapsulation of the **UDP protocol**. I used an Arduino Uno with an Ethernet Shield for this purpose.\n### The Website:\nTo create a Human-Machine Interface, I set up a website with a NodeJS server in the backend that receives UDP data over the network and communicates with the web page via web sockets.  \nThe website is divided into 4 parts:\n1. Home - All information is displayed visually\n2. Logs - All information is displayed in a table with reception times\n3. Settings - Where the server's receiving parameters can be viewed\n4. Help - Information in case of problems\n\n![](screens/projetBac1.png)",
+    "thumbnail": "screens/thumbnail_chickencoop.jpg",
+    "markdown": "## For my Baccalaureate oral exam, I created a chicken coop that transmits captured information to a website.\n### Project Description:\nMy two teammates and I developed a solution to make a backyard chicken habitat connected. We planned to implement the following:\n- RFID chip for chicken counting\n- Temperature sensor\n- Servo motor for opening/closing the door\n- Scale for weighing water\n- Image recognition for egg counting\n- Data transmission to a website\n\nI took care of the website and the Arduino data transmission.\n### The Arduino:\nIn the project, I handled the data transmission to a computer via the network using encapsulation of the **UDP protocol**. I used an Arduino Uno with an Ethernet Shield for this purpose.\n### The Website:\nTo create a Human-Machine Interface, I set up a website with a NodeJS server in the backend that receives UDP data over the network and communicates with the web page via web sockets.  \nThe website is divided into 4 parts:\n1. Home - All information is displayed visually\n2. Logs - All information is displayed in a table with reception times\n3. Settings - Where the server's receiving parameters can be viewed\n4. Help - Information in case of problems\n\n![](screens/screenshot_chickencoop.png)",
     "active": true
   },
   {
@@ -48,8 +48,8 @@
     "title": "Portfolio",
     "date": "2022",
     "tags": ["html", "css", "javascript", "php", "git"],
-    "thumbnail": "screens/How-to-make-portfolio-for-design-admission.jpg",
-    "markdown": "## In the process of developing my resume and showcasing my projects, I created a website\nI envisioned the website in several steps:\n1.  Page visualization and creation of a site hierarchy\n2.  Creation of a graphic design\n3.  Creation of a layout mockup using Figma\n4.  Development of the site using HTML, CSS, and JavaScript\n5.  Website deployment using a web hosting service\n\n### The Challenges:\nTo create this site, I challenged myself to do everything on my own, which means not copying and pasting from websites like StackOverflow or others.  \nSimilarly, when encountering problems, I only sought help from online documentation such as w3school.com or MDN web docs.\n\nThe final step was populating the site with all the projects I had already done and filling the other pages with all the information.\n\n![](screens/webPortfolio1.png)",
+    "thumbnail": "screens/thumbnail_portfolio.jpg",
+    "markdown": "## In the process of developing my resume and showcasing my projects, I created a website\nI envisioned the website in several steps:\n1.  Page visualization and creation of a site hierarchy\n2.  Creation of a graphic design\n3.  Creation of a layout mockup using Figma\n4.  Development of the site using HTML, CSS, and JavaScript\n5.  Website deployment using a web hosting service\n\n### The Challenges:\nTo create this site, I challenged myself to do everything on my own, which means not copying and pasting from websites like StackOverflow or others.  \nSimilarly, when encountering problems, I only sought help from online documentation such as w3school.com or MDN web docs.\n\nThe final step was populating the site with all the projects I had already done and filling the other pages with all the information.\n\n![](screens/screenshot_portfolio.png)",
     "active": true
   },
   {
@@ -76,7 +76,7 @@
       "team work"
     ],
     "thumbnail": "",
-    "markdown": "## Réalisation d'un site web pour une association\nJ'ai réalisé un site web pour l'association Vieux Pistons Bretons. Le site est assez simple et est divisé en plusieurs parties.\n- Accueil\n- Événements\n- Annonces\n- À propos\n- Membre\n\nLe site a nécessité la mise en place d'un système de comptes afin que certaines personnes puissent créer des articles et des actualités et d'autres aient juste accès aux actualités membre.\n\nLe compte membre a accès aux actualités membre émises par l'association et à la possibilité de créer des annonces.\n\nLe compte Admin a tous les droits, de la création, suppression, modification de compte et d'article, à la création d'événements et d'actualité membre\n\n![](assetsscreens/vpb1.png)",
+    "markdown": "## Réalisation d'un site web pour une association\nJ'ai réalisé un site web pour l'association Vieux Pistons Bretons. Le site est assez simple et est divisé en plusieurs parties.\n- Accueil\n- Événements\n- Annonces\n- À propos\n- Membre\n\nLe site a nécessité la mise en place d'un système de comptes afin que certaines personnes puissent créer des articles et des actualités et d'autres aient juste accès aux actualités membre.\n\nLe compte membre a accès aux actualités membre émises par l'association et à la possibilité de créer des annonces.\n\nLe compte Admin a tous les droits, de la création, suppression, modification de compte et d'article, à la création d'événements et d'actualité membre\n\n![](assetsscreens/screen_vpb.png)",
     "active": false
   },
   {
@@ -84,8 +84,8 @@
     "title": "Site KohFrais",
     "date": "",
     "tags": ["html", "css", "javascript", "git", "team work"],
-    "thumbnail": "screens/ice-cream-1.jpg",
-    "markdown": "## Creation of a showcase website as part of a study project\nAs part of a project for my first year of my Bachelor's degree in Computer Science, I collaborated with a team to develop a showcase website for a fictional company called KohFrais.  \nOur work was divided into several steps:\n- Creation of a graphic design\n- Designing the logo and graphic assets\n- Development of the website\n- Deployment\n- Presentation defense\n\nThroughout the project, we used Gitlab at our university to save our work step by step, which allowed me to learn the importance of tools like **git**.\n\n![](screens/kohFrait1.png)",
+    "thumbnail": "screens/thumbnail_kohfrais.jpg",
+    "markdown": "## Creation of a showcase website as part of a study project\nAs part of a project for my first year of my Bachelor's degree in Computer Science, I collaborated with a team to develop a showcase website for a fictional company called KohFrais.  \nOur work was divided into several steps:\n- Creation of a graphic design\n- Designing the logo and graphic assets\n- Development of the website\n- Deployment\n- Presentation defense\n\nThroughout the project, we used Gitlab at our university to save our work step by step, which allowed me to learn the importance of tools like **git**.\n\n![](screens/screenshot_kohfrais.png)",
     "active": true
   },
   {
@@ -93,8 +93,8 @@
     "title": "Yams CLI",
     "date": "",
     "tags": ["c", "git"],
-    "thumbnail": "screens/yahtzeeCover.png",
-    "markdown": "## Creation of a Yams game in a terminal\nAs part of a project for my first year of my Bachelor's degree in Computer Science, I developed a Yams/Yathzee game in the terminal.  \n\n### My Yams game was created in several steps:\n- Creation of initial visuals using ASCII art\n- Development of the program using PseudoCode\n- Programming in C\n- Testing phase\n\nThroughout this project, I followed the typical software development steps of modeling, programming, and testing.\n\n![](screens/yams1.png)",
+    "thumbnail": "screens/thumbnail_yams.png",
+    "markdown": "## Creation of a Yams game in a terminal\nAs part of a project for my first year of my Bachelor's degree in Computer Science, I developed a Yams/Yathzee game in the terminal.  \n\n### My Yams game was created in several steps:\n- Creation of initial visuals using ASCII art\n- Development of the program using PseudoCode\n- Programming in C\n- Testing phase\n\nThroughout this project, I followed the typical software development steps of modeling, programming, and testing.\n\n![](screens/screenshot_yams.png)",
     "active": true
   },
   {
@@ -102,7 +102,7 @@
     "title": "Markdown to PDF Conversion Service",
     "date": "2022",
     "tags": ["docker", "php", "bash", "git", "team work"],
-    "thumbnail": "screens/report-monochromatic.png",
+    "thumbnail": "screens/thumbnail_document.png",
     "markdown": "## Overview\n As part of a project undertaken during my first year of studies in Computer Science, I successfully developed a robust Markdown to PDF converter. The project integrated various technologies to ensure efficiency and scalability.\n\n## Technologies Employed\n- ### Docker :\n   - Docker was strategically chosen for its seamless deployment and scalability features. This containerization solution provided an easy and efficient means to manage the application.\n- ### Bash :\n   - The project leveraged Bash scripting to continuously monitor for new markdown documents. Upon detecting a new document, the script seamlessly triggered a PHP script for conversion.\n\n- ### Php :\n   - Two distinct PHP scripts were employed for different functionalities. The first script efficiently converted markdown files to PDF, while the second script generated a corresponding billing document.\n\n[Source Code](https://github.com/BlasterWhite/MarkdownToPDF/tree/main)",
     "active": true
   },
@@ -111,7 +111,7 @@
     "title": "New Program",
     "tags": ["team work", "vuejs", "javascript", "scss"],
     "date": "2023",
-    "thumbnail": "screens/maintenance-monochromatic.png",
+    "thumbnail": "screens/thumbnail_maintenance.png",
     "markdown": "## Create a fully configurable application\n\nDuring my apprenticeship at CYIM, I was involved in a number of projects, including an update of the program application. The aim of this update was to remake the application by creating reusable and configurable components.\n\nWith the team I was part of, we first created a new VueJS component library. These components are completely configurable, to display certain elements such as the formatting of dates, times and names.\n\nFinally, we updated the application program by adding the newly developed components. This application program is configured in another application, so that a non-computer scientist can configure the appearance of this application to suit the customer.\n\nThis project confirmed the team's cohesion, notably with the setting up of a coding dojo to finish off the project's final touches.",
     "active": true
   },
@@ -132,8 +132,8 @@
       "devops"
     ],
     "date": "2024",
-    "thumbnail": "screens/bookRPG-1.png",
-    "markdown": "## Creation of an interactive book website.\n\nFor a university project, with a team of 5, we created a website to create, maintain and read interactive books.\n\nThese interactive books are based on a type of book where the reader is the hero of the book, having to make choices that will influence the story being told.\n\nWe developed a frontend application and API using a PostgresSQL database. My role was DevOp for the integration of the application on a VPS using a Docker-based containerization system. I also set up a CI/CD with the GitHub action tool.\n\nMy second role was to be the main developer of the front-end application, which was developed in React, in pair with another team member I also made the mock-ups to get a vision of what we wanted to do as UI/UX. \n\n![](screens/bookRPG-1.png)\n\nEach page of the book could be of different type, we developed 4 types of page: \n- the multiple choice page, where the reader has to make a choice.\n- the dice page, where the reader throws dice and must meet certain conditions to win. \n- the enigma page, where the reader must answer an enigma with a tolerance for error, thanks to Levenschtein's algorithm.\n- And finally, the combat page, where the reader rolls dice to fight an enemy.\n\n\nThe biggest feature of our site was the backoffice, which allows the administrator to create and modify adventure books, weapons and equipment.\n\n![](screens/bookRPG-2.png)",
+    "thumbnail": "screens/screenshot_bookrpg.png",
+    "markdown": "## Creation of an interactive book website.\n\nFor a university project, with a team of 5, we created a website to create, maintain and read interactive books.\n\nThese interactive books are based on a type of book where the reader is the hero of the book, having to make choices that will influence the story being told.\n\nWe developed a frontend application and API using a PostgresSQL database. My role was DevOp for the integration of the application on a VPS using a Docker-based containerization system. I also set up a CI/CD with the GitHub action tool.\n\nMy second role was to be the main developer of the front-end application, which was developed in React, in pair with another team member I also made the mock-ups to get a vision of what we wanted to do as UI/UX. \n\n![](screens/screenshot_bookrpg.png)\n\nEach page of the book could be of different type, we developed 4 types of page: \n- the multiple choice page, where the reader has to make a choice.\n- the dice page, where the reader throws dice and must meet certain conditions to win. \n- the enigma page, where the reader must answer an enigma with a tolerance for error, thanks to Levenschtein's algorithm.\n- And finally, the combat page, where the reader rolls dice to fight an enemy.\n\n\nThe biggest feature of our site was the backoffice, which allows the administrator to create and modify adventure books, weapons and equipment.\n\n![](screens/screenshot_bookrpg2.png)",
     "active": true
   },
   {
@@ -148,17 +148,17 @@
       "rest api"
     ],
     "date": "2024",
-    "thumbnail": "screens/flags.png",
-    "markdown": "## Creating Flags applications\n\nFlags is an application designed to introduce users to the vast world of world flags, with duels against other people.\n\nThis project is still under construction.\n\n![](screens/bookRPG-1.png)",
+    "thumbnail": "screens/thumbnail_flags.png",
+    "markdown": "# Flags Project\n\nWelcome to the Flags application project! This application is designed to introduce users to the vast world of world flags, with exciting duels against other people.\n\n## Project Status\n\nThis project is currently under construction. Stay tuned for updates!\n\n## Technologies Used\n\nThis project is built using the following technologies:\n\n- **NuxtJS**: For the frontend framework\n- **SCSS**: For styling\n- **Firebase**: For backend services and real-time database\n- **HTML**: For structuring the web pages\n- **TypeScript**: For type safety and better development experience\n- **REST API**: For data interaction\n- **VueJS**: For the core framework\n\n## Features\n\nThe Flags application aims to provide an engaging and educational experience with the following features:\n\n- **Explore Flags**: Learn about different world flags\n- **Duels**: Challenge other users in flag identification duels\n\n## Site Structure\n\nThe site will be divided into several key sections:\n\n### 1. Home Page\n\n- **Introduction**: Brief overview of the application and its purpose\n- **Getting Started**: Instructions on how to begin exploring flags and participating in duels\n\n### 2. Explore Flags\n\n- **Flag Gallery**: Browse through an extensive collection of world flags\n- **Flag Details**: Detailed information about each flag\n\n### 3. Duels\n\n- **Challenge Friends**: Initiate duels with friends or other users\n- **Leaderboard**: View rankings and track your performance\n\n### 4. User Profile\n\n- **Profile Information**: Manage your profile and preferences\n- **Achievements**: Track your progress and achievements in the application\n\n## Conclusion\n\nWe are working hard to bring this exciting project to life. We hope you look forward to exploring and learning about world flags through fun and interactive duels. Stay tuned for more updates!\n",
     "active": true,
     "ongoing": true
   },
   {
     "title": "ASCII Camera",
-    "tags": [],
+    "tags": ["python", "opencv", "git"],
     "date": "2024",
-    "thumbnail": "screens/asciiCam.png",
-    "markdown": "## Python ASCII cam",
+    "thumbnail": "screens/screenshot_asciicam.png",
+    "markdown": "# ASCII Image from Webcam Project\n\nWelcome to my new project! This application captures images from your webcam and converts them into ASCII art using Python. \n\n## Technologies Used\n\nThis project utilizes the following technologies:\n\n- **Python**: The main programming language used for the project\n- **OpenCV**: For accessing and manipulating webcam images\n- **Git**: For version control\n\n## Project Overview\n\n### 1. Purpose\n\nThe purpose of this project is to demonstrate how to capture real-time images from a webcam and convert them into ASCII art. This can be a fun and creative way to transform visual data into a text-based representation.\n\n### 2. Features\n\n- **Webcam Access**: Capture real-time images from your webcam\n- **Image Processing**: Convert captured images to grayscale\n- **ASCII Conversion**: Transform grayscale images into ASCII art\n- **Real-time Display**: Display the ASCII art in real-time\n\n## How It Works\n\n1. **Capture Image**: The application captures an image from the webcam using OpenCV.\n2. **Convert to Grayscale**: The captured image is converted to a grayscale image.\n3. **Map to ASCII Characters**: Each pixel in the grayscale image is mapped to a corresponding ASCII character based on its intensity.\n4. **Display ASCII Art**: The resulting ASCII art is displayed in the terminal.\n\n## Conclusion\n\nThis project showcases the power and versatility of Python and OpenCV for real-time image processing and transformation. Feel free to explore the code and experiment with different ASCII mappings and image processing techniques!\n",
     "active": true,
     "ongoing": false
   },
