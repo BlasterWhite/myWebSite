@@ -15,7 +15,7 @@
         </div>
       </div>
       <div id="HeaderImage">
-        <img src="@/assets/photos/Combine.png" alt="HeaderImage" id="pp" />
+        <img id="pp" src="@/assets/photos/Combine.png" alt="HeaderImage" />
         <img src="@/assets/blob.svg" alt="Backgrounds Image 2" blob2 />
       </div>
     </div>

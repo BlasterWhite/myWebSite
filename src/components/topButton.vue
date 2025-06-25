@@ -1,5 +1,5 @@
 <template>
-  <div class="top-button" @click="goToTop" v-if="show">
+  <div v-if="show" class="top-button" @click="goToTop">
     <span class="material-symbols-outlined"> arrow_upward </span>
   </div>
 </template>
@@ -14,6 +14,10 @@ export default defineComponent({
       show: false,
     };
   },
+  created() {
+    // ESLint-disable-next-line @typescript-eslint/no-misused-promises
+    window.addEventListener("scroll", this.handleScroll);
+  },
   methods: {
     goToTop() {
       window.scrollTo({
@@ -25,9 +29,6 @@ export default defineComponent({
       this.show = true;
       window.removeEventListener("scroll", this.handleScroll);
     },
-  },
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
   },
 });
 </script>

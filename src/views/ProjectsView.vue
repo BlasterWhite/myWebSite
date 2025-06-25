@@ -5,9 +5,9 @@
     <div id="container">
       <div id="search">
         <input
+          v-model="search"
           type="search"
           placeholder="team work, javascript, elasticseach, ..."
-          v-model="search"
         />
       </div>
       <div id="projects">
@@ -28,8 +28,8 @@
     </div>
     <project-fullscreen
       v-if="fullscreen"
-      @close="fullscreen = false"
       :model-value="projectInFullscreen"
+      @close="fullscreen = false"
     />
   </div>
 </template>

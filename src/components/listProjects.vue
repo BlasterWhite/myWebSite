@@ -1,18 +1,18 @@
 <template>
   <div class="controller">
-    <div @click="slide(432, false)" class="btn">
+    <div class="btn" @click="slide(432, false)">
       <span class="material-symbols-outlined"> arrow_back_ios_new</span>Previous
     </div>
-    <div @click="slide(-432, true)" class="btn">
+    <div class="btn" @click="slide(-432, true)">
       Next
       <span class="material-symbols-outlined"> arrow_forward_ios</span>
     </div>
   </div>
   <div class="list">
     <div
-      class="list-projects loading"
       v-if="isLoading"
       ref="componentRef"
+      class="list-projects loading"
       @mousemove="dragging"
       @mousedown="draggingStart"
       @mouseup="draggingStop"
@@ -23,22 +23,22 @@
     >
       <div
         v-for="i in 10"
-        :key="i"
-        @click="select(i)"
         :id="'listProject' + i"
+        :key="i"
         :class="projectSelected === i ? 'selected' : ''"
+        @click="select(i)"
       >
         {{ i }}
       </div>
     </div>
-    <div class="list-projects" v-else>
+    <div v-else class="list-projects">
       <div
         v-for="(project, index) in projects"
-        :key="index"
-        @click="select(index)"
         :id="'listProject' + index"
+        :key="index"
         :class="projectSelected === index ? 'selected' : ''"
         :style="`background: url(${project.thumbnail}); background-size: cover; background-position: center; overflow: hidden;`"
+        @click="select(index)"
         @mousemove="dragging"
         @mousedown="draggingStart"
         @mouseup="draggingStop"
@@ -47,7 +47,7 @@
         @touchstart="draggingStart"
         @touchend="draggingStop"
       >
-        <p class="tag" v-if="index < competences_bachelor.length">
+        <p v-if="index < competences_bachelor.length" class="tag">
           {{ competences_bachelor[index] }}
         </p>
         <p class="title">
@@ -78,6 +78,8 @@ export default defineComponent({
       default: 0,
     },
   },
+
+  emits: ["select"],
   data() {
     return {
       componentWidth: 0,
@@ -96,8 +98,6 @@ export default defineComponent({
       ],
     };
   },
-
-  emits: ["select"],
 
   mounted() {
     this.getComponentWidth();

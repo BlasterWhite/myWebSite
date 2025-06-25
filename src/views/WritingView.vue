@@ -5,7 +5,7 @@
         <h1>Playground</h1>
         <div>
           <label for="projectSelected">Project template: </label>
-          <select name="projectSelected" v-model="projectSelected">
+          <select v-model="projectSelected" name="projectSelected">
             <option
               v-for="(project, index) in data"
               :key="index"

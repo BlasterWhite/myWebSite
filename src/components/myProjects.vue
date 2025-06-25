@@ -25,6 +25,11 @@ import projectsData from "@/assets/projects.json";
 
 export default defineComponent({
   name: "MyProjects",
+
+  components: {
+    ListProjects,
+    ShowProject,
+  },
   data() {
     return {
       isLoading: false,
@@ -57,11 +62,6 @@ export default defineComponent({
     selectProject(i: number) {
       this.projectSelected = i;
     },
-  },
-
-  components: {
-    ListProjects,
-    ShowProject,
   },
 });
 </script>

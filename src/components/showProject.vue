@@ -9,8 +9,8 @@
           projects[projectSelected].date
         }}</span>
         <span
-          class="project-showcase-header-title-ongoing"
           v-if="projects[projectSelected]?.ongoing"
+          class="project-showcase-header-title-ongoing"
         >
           <span></span>
           Ongoing
@@ -52,6 +52,15 @@ export default defineComponent({
       default: 1,
     },
   },
+  computed: {
+    html() {
+      return this.postHtml(
+        this.projects[this.projectSelected].markdown
+          ? marked.parse(this.projects[this.projectSelected].markdown)
+          : "",
+      );
+    },
+  },
   methods: {
     postHtml(text: string) {
       let newText = text;
@@ -60,15 +69,6 @@ export default defineComponent({
         '<a href="$1" target="_blank">$2</a>',
       );
       return newText;
-    },
-  },
-  computed: {
-    html() {
-      return this.postHtml(
-        this.projects[this.projectSelected].markdown
-          ? marked.parse(this.projects[this.projectSelected].markdown)
-          : "",
-      );
     },
   },
 });

@@ -2,7 +2,7 @@
   <div class="project-fullscreen">
     <div class="project-fullscreen-container">
       <div id="project-fullscreen-close">
-        <svg @click="$emit('close')" width="24" height="24" viewBox="0 0 24 24">
+        <svg width="24" height="24" viewBox="0 0 24 24" @click="$emit('close')">
           <path
             fill="currentColor"
             d="M12 10.586L16.95 5.636a1 1 0 111.414 1.414L13.414 12l4.95 4.95a1 1 0 11-1.414 1.414L12 13.414l-4.95 4.95a1 1 0 11-1.414-1.414L10.586 12 5.636 7.05a1 1 0 111.414-1.414L12 10.586z"

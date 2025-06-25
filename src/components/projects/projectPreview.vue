@@ -1,10 +1,10 @@
 <template>
   <div
+    v-if="isVisible"
     class="project-preview"
     :style="'background-image: url(' + props.modelValue?.thumbnail + ');'"
-    v-if="isVisible"
   >
-    <div class="ongoing" v-if="props.modelValue?.ongoing">
+    <div v-if="props.modelValue?.ongoing" class="ongoing">
       <span>Ongoing</span>
     </div>
     <div class="title">

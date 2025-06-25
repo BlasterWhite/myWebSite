@@ -7,37 +7,37 @@
         <div>
           <label for="projectTitle">Project title: </label>
           <input
+            v-model="projectTitle"
             type="text"
             name="projectTitle"
             placeholder="My Project"
-            v-model="projectTitle"
           />
         </div>
         <div>
           <label for="projectThumbnail">Project thumbnail: </label>
           <input
+            v-model="projectThumbnail"
             type="text"
             name="projectThumbnail"
             placeholder="img.jpg"
-            v-model="projectThumbnail"
           />
         </div>
         <div>
           <label for="projectDate">Project Date: </label>
           <input
+            v-model="projectDate"
             type="text"
             name="projectDate"
             placeholder="2023"
-            v-model="projectDate"
           />
         </div>
         <div>
           <label for="projectTags">Project tags: </label>
           <input
+            v-model="projectTags"
             type="text"
             name="projectTags"
             placeholder="html, css, thing"
-            v-model="projectTags"
           />
         </div>
       </form>
